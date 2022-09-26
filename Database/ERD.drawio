@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-09-26T15:11:24.173Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="1-kQwAS7AO1J-d7N_KCK" version="20.3.6" type="gitlab">
+<mxfile host="app.diagrams.net" modified="2022-09-26T15:12:45.029Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="PJjudgva2G9oYLkQozbo" version="20.3.6" type="gitlab">
   <diagram id="cNjoJb3xCbdc75B7nKFs" name="Page-1">
-    <mxGraphModel dx="1422" dy="805" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="702" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -219,8 +219,19 @@
         <mxCell id="9ZRUXakyGqi-DYFqGIda-46" value="Manage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="610" y="415" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="9ZRUXakyGqi-DYFqGIda-48" value="Post/Apply" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="210" y="405" width="80" height="30" as="geometry" />
+        <mxCell id="9ZRUXakyGqi-DYFqGIda-48" value="Post/Apply/Edit" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="405" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9ZRUXakyGqi-DYFqGIda-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.811;entryY=-0.005;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="CP-2H9inPgZGe5vY07QO-1" target="CP-2H9inPgZGe5vY07QO-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="70" />
+              <mxPoint x="226" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ZRUXakyGqi-DYFqGIda-50" value="Rate" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="170" y="40" width="50" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
