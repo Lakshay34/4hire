@@ -1,0 +1,25 @@
+{
+  "name": "4hire",
+  "version": "1.0.0",
+  "description": "4Hire is a web application that will provide a platform to promote freelancing in Bhutan.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/12190022.gcit/4hire.git"
+  },
+  "author": "Group6",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/12190022.gcit/4hire/issues"
+  },
+  "homepage": "https://gitlab.com/12190022.gcit/4hire#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
