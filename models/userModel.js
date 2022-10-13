@@ -22,30 +22,44 @@ const userSchema = new mongoose.Schema({
     },
 
     skills: {
-        type: String,
-
-    },
-
-    role: {
-        type: String,
-        enum: ['user','admin'],
-        default: 'user',
+        type: Array,
     },
 
     rating: {
         type: Number,
+        minimum: 0,
+        maximum: 5,
+        default: "0"
+    },
 
+    description: {
+        type: String
+    },
+
+    address: {
+        type: String
+    },
+
+    cv: {
+        type: String
+    },
+
+    JoinDate: {
+        type: String
+    },
+
+    report: {
+        type: Number,
+        minimum: 0,
+        maximum: 3,
+        default: "0",
     }
-
 })
 
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next()
 
     this.password = await bcrypt.hash(this.password, 12)
-
-    this.passwordConfirm = undefined 
-    next()
 })
 
 const User = mongoose.model('User', userSchema)
