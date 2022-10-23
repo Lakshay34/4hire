@@ -52,12 +52,8 @@ exports.login = async (req, res, next) => {
     }
 
     createSendToken(user, 200, res);
-    // const token = signToken(user._id);
-    // res.status(200).json({
-    //   status: "success",
-    //   token,
-    // });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+

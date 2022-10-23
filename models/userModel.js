@@ -20,6 +20,16 @@ const userSchema = new mongoose.Schema({
         minlength: 8,
         select: false,
     },
+    passwordConfirm: {
+        type: String,
+        required: [true, "Please confirm your password"],
+        validate: {
+          validator: function (el) {
+            return el === this.password;
+          },
+          message: "Password not same",
+        },
+    },
 
     skills: {
         type: Array,
@@ -60,6 +70,8 @@ userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next()
 
     this.password = await bcrypt.hash(this.password, 12)
+    this.passwordConfirm = undefined;
+    next();
 })
 
 userSchema.methods.correctPassword = async function (

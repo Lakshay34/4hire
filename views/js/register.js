@@ -1,0 +1,33 @@
+const register = async (name, email, password, passwordConfirm, JoinDate) => {
+    try {
+      const res = await axios({
+        method: 'POST',
+        url: 'http://localhost:4001/api/v1/users/signup',
+        data: {
+            name,
+          email,
+          password,
+          passwordConfirm,
+          JoinDate
+        }
+      });
+      if (res.data.status === 'success') {
+        // alert('success', 'Logged in successfully!');
+        window.setTimeout(() => {
+          location.assign('/login');
+        }, 1500);
+      }
+    } catch (err) {
+      console.log(err.response.data);
+    }
+  };
+
+document.querySelector(".form-container").addEventListener("submit", e => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+    const JoinDate = new Date()
+    register(name, email, password, passwordConfirm, JoinDate);
+})
