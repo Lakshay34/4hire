@@ -15,7 +15,7 @@ const register = async (name, email, password, passwordConfirm, JoinDate) => {
         // alert('success', 'Logged in successfully!');
         window.setTimeout(() => {
           location.assign('/login');
-        }, 1500);
+        }, 500);
       }
     } catch (err) {
       console.log(err.response.data);
