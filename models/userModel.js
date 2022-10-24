@@ -70,6 +70,11 @@ const userSchema = new mongoose.Schema({
         default: "0",
     },
 
+    active: {
+        type: Boolean,
+        default: true,
+        select: false
+      }
 })
 
 userSchema.pre('save', async function (next) {
