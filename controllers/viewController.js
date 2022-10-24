@@ -11,3 +11,7 @@ exports.getregisterForm = (req, res) => {
 exports.getloginForm = (req, res) => {
     res.sendFile(path.join(__dirname, "../", "views", "login.html"));
 };
+
+exports.getprofile = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "profile.html"));
+};

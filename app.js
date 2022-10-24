@@ -7,6 +7,14 @@ const cookieParser = require("cookie-parser")
 
 app.use(express.json())
 app.use(cookieParser( ))
+
+// Test middleware
+app.use((req, res, next) => {
+    req.requestTime = new Date().toISOString();
+    // console.log(req.headers);
+    next();
+  });
+
 app.use('/api/v1/users', userRouter)
 app.use("/", viewRouter);
 
