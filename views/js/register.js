@@ -1,10 +1,11 @@
+
 const register = async (name, email, password, passwordConfirm, JoinDate) => {
     try {
       const res = await axios({
         method: 'POST',
         url: 'http://localhost:4001/api/v1/users/signup',
         data: {
-            name,
+          name,
           email,
           password,
           passwordConfirm,
@@ -12,13 +13,13 @@ const register = async (name, email, password, passwordConfirm, JoinDate) => {
         }
       });
       if (res.data.status === 'success') {
-        // alert('success', 'Logged in successfully!');
+        alert('success', 'Logged in successfully!');
         window.setTimeout(() => {
           location.assign('/login');
         }, 500);
       }
     } catch (err) {
-      console.log(err.response.data);
+      console.log(err);
     }
   };
 
