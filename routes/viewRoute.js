@@ -7,4 +7,9 @@ router.get("/", viewController.getlandingpage);
 router.get("/register", viewController.getregisterForm);
 router.get("/login", authController.isLoggedIn, viewController.getloginForm);
 router.get("/profile", authController.protect, viewController.getprofile);
+router.get("/forgotpassword", viewController.getforgotPass);
+router.get("/resetpassword", viewController.getforgotPass2);
+router.get("/passsuccess", viewController.getforgotPassSuccess);
+
+
 module.exports = router;

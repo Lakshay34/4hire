@@ -15,3 +15,15 @@ exports.getloginForm = (req, res) => {
 exports.getprofile = (req, res) => {
     res.sendFile(path.join(__dirname, "../", "views", "profile.html"));
 };
+
+exports.getforgotPass = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "forgotpass.html"));
+};
+
+exports.getforgotPass2 = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "forgotpass2.html"));
+};
+
+exports.getforgotPassSuccess = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "forgotpassSuccess.html"));
+};
