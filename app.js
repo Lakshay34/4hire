@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const path = require("path");
 const userRouter = require('./routes/userRoutes')
+const taskRouter = require('./routes/taskRoutes')
 const viewRouter = require("./routes/viewRoute");
 const cookieParser = require("cookie-parser")
 const helmet = require('helmet')
@@ -33,6 +34,7 @@ app.use(xss());
 
 // ROUTES
 app.use('/api/v1/users', userRouter)
+app.use('/api/v1/tasks', taskRouter)
 app.use('/', viewRouter);
 
 
