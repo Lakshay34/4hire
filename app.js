@@ -33,7 +33,8 @@ app.use(xss());
 
 // ROUTES
 app.use('/api/v1/users', userRouter)
-app.use("/", viewRouter);
+app.use('/', viewRouter);
 
-app.use(express.static(path.join(__dirname, "views")));
+
+app.use(express.static(path.join(__dirname, 'views')));
 module.exports = app

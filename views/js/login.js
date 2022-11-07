@@ -1,3 +1,6 @@
+import { showAlert } from './alert.js'
+// const axios = require('axios');
+
 const login = async (email, password) => {
         try {
         const res = await axios({
@@ -9,7 +12,8 @@ const login = async (email, password) => {
         },
       });
       if (res.data.status === 'success') {
-        //alert('success', 'Logged in successfully!');
+        
+        showAlert('success', 'Logged in successfully!');
         window.setTimeout(() => {
           location.assign('/profile');
         }, 500);
@@ -25,7 +29,7 @@ const logout = async () => {
   try {
     const res = await axios({
       method: 'GET',
-      url: 'http://127.0.0.1:3000/api/v1/users/logout'
+      url: 'http://127.0.0.1:4001/api/v1/users/logout'
     });
     if ((res.data.status = 'success')) location.reload(true);
   } catch (err) {

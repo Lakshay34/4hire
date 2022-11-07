@@ -1,3 +1,5 @@
+import { showAlert } from './alert.js'
+// const axios = require('axios');
 
 const register = async (name, email, password, passwordConfirm, JoinDate) => {
     try {
@@ -13,7 +15,7 @@ const register = async (name, email, password, passwordConfirm, JoinDate) => {
         }
       });
       if (res.data.status === 'success') {
-        alert('success', 'Logged in successfully!');
+        showAlert('success', 'Account created successfully!');
         window.setTimeout(() => {
           location.assign('/login');
         }, 500);

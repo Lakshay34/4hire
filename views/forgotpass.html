@@ -40,16 +40,14 @@
         <div class="form-container">
             <div class="image-holder" style="background-image: url(&quot;assets/img/forgot-password%20pic.png&quot;);background-position: top;"></div><form method="post"  style="border:1px solid; border-radius: 15px";>
     <h2 class="text-center" style="font-family: Roboto, sans-serif;"><strong>Forgot Password</strong></h2>
+    <br>
     <div class="form-group">
         <label>Enter email address</label>
-        <input type="email" class="form-control" name="email"/>
+        <input type="email" class="form-control" id="email" name="email"/>
     </div>
-    <div class="form-group">
-        <label>Check your mail for the code</label>
-        <input type="email" class="form-control" name="checkmail"/>
-    </div>
-    <br>
-    <a style="float:right; margin-bottom:10px; margin-top:0px; color:#0D9CEC;text-decoration: none" href="#">Don't get mail, click here to resend</a>
+    <br><br>
+    
+    <a style="float:right; margin-bottom:10px; margin-top:0px; color:#0D9CEC;text-decoration: none" id="resend">Don't get mail, click here to resend</a>
     <div class="form-group"><button class="btn btn-block" type="submit" style="background-color:#0D9CEC;font-family: Roboto, sans-serif; color:#fff" href="#">Reset Password</button></div><a class="already" href="/login" style="font-family: Roboto, sans-serif; color:#0D9CEC">Back to login</a></form></div>
     </div>
     <div class="footer-dark" style="margin-top: px;padding-top: 0px;">
@@ -75,6 +73,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Advanced-NavBar---Multi-dropdown.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script type="module" src="js/forgotpassword.js"></script>
 </body>
 
 </html>

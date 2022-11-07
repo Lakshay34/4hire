@@ -44,7 +44,6 @@ const userSchema = new mongoose.Schema({
         type: Number,
         minimum: 0,
         maximum: 5,
-        default: "0"
     },
 
     description: {
@@ -67,7 +66,6 @@ const userSchema = new mongoose.Schema({
         type: Number,
         minimum: 0,
         maximum: 3,
-        default: "0",
     },
 
     active: {
