@@ -32,7 +32,11 @@ const taskSchema = new mongoose.Schema({
     },
 
     postedBy:{
-        type:String,
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        name: String
     }
 })
 
