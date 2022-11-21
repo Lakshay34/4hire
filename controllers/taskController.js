@@ -62,6 +62,7 @@ exports.getTask = async (req, res) => {
     }
 }
 
+
 exports.updateTask = async (req, res) => {
     try {
         const tasks = await Task.findByIdAndUpdate(req.params.id);
