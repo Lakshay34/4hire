@@ -8,15 +8,15 @@ const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 
-app.use(helmet({
-  contentSecurityPolicy: {
-    useDefaults: true, 
-    directives: { 
-      'script-src': ["'self'", "https://cdnjs.cloudflare.com/"]  
-    }
-  }
-})
-);
+// app.use(helmet({
+//   contentSecurityPolicy: {
+//     useDefaults: true, 
+//     directives: { 
+//       'script-src': ["'self'", "https://cdnjs.cloudflare.com/"]  
+//     }
+//   }
+// })
+// );
 app.use(express.json())
 app.use(cookieParser( ))
 

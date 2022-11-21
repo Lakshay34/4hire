@@ -27,3 +27,19 @@ exports.getforgotPass2 = (req, res) => {
 exports.getforgotPassSuccess = (req, res) => {
     res.sendFile(path.join(__dirname, "../", "views", "forgotpassSuccess.html"));
 };
+
+exports.getAdminLogin = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "adminlogin.html"));
+};
+
+exports.getAdminProfile = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "adminprofile.html"));
+};
+
+exports.getAdminTask = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "adminTasks.html"));
+};
+
+exports.getAdminUser = (req, res) => {
+    res.sendFile(path.join(__dirname, "../", "views", "adminUsers.html"));
+};
