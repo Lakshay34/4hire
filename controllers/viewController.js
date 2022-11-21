@@ -1,3 +1,6 @@
+const User = require('./../models/userModel')
+const AppError = require('./../utils/appError')
+
 const path = require("path");
 
 exports.getlandingpage = (req, res) => {
@@ -29,17 +32,17 @@ exports.getforgotPassSuccess = (req, res) => {
 };
 
 exports.getAdminLogin = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "adminlogin.html"));
+    res.render('adminlogin');
 };
 
 exports.getAdminProfile = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "adminprofile.html"));
+    res.render("adminprofile");
 };
 
 exports.getAdminTask = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "adminTasks.html"));
+    res.render("adminTasks");
 };
 
 exports.getAdminUser = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "adminUsers.html"));
+    res.render("adminUsers");
 };

@@ -8,6 +8,7 @@ const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 
+app.set('view engine', 'ejs');
 // app.use(helmet({
 //   contentSecurityPolicy: {
 //     useDefaults: true, 
@@ -34,7 +35,6 @@ app.use(xss());
 // ROUTES
 app.use('/api/v1/users', userRouter)
 app.use('/', viewRouter);
-
 
 app.use(express.static(path.join(__dirname, 'views')));
 module.exports = app

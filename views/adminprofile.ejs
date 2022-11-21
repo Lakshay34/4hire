@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>profile</title>
-    <link rel="stylesheet" href="assets/css/style.css" media="screen">
+    <title>Profile</title>
+    <link rel="stylesheet" href="assetsAdmin/css/style.css" media="screen">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/adminprofile.css" media="screen">
-    <script class="u-script" type="text/javascript" src="assets/js/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="assets/js/admin.js" defer=""></script>
+    <link rel="stylesheet" href="assetsAdmin/css/adminprofile.css" media="screen">
+    <script class="u-script" type="text/javascript" src="./assetsAdmin/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="./assetsAdmin/js/admin.js" defer=""></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -20,8 +20,8 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-overlap u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-fed0"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="adminUsers.html" class="u-image u-logo u-image-1" data-image-width="621" data-image-height="402">
-          <img src="assets/img/IMG_20221010_113058_320-removebg-preview.png" class="u-logo-image u-logo-image-1">
+        <a href="/adminUsers" class="u-image u-logo u-image-1" data-image-width="621" data-image-height="402">
+          <img src="assetsAdmin/images/IMG_20221010_113058_320-removebg-preview.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="SM" data-submenu-level="on-click">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 400;">
@@ -32,16 +32,16 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-1" href="/admin/Users" style="padding: 10px 20px;">Users</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-1" href="/admin/Tasks" style="padding: 10px 20px;">Tasks</a>
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-1" href="/adminUsers" style="padding: 10px 20px;">Users</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-1" href="/adminTasks" style="padding: 10px 20px;">Tasks</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-sidenav u-sidenav-1" data-offcanvas-width="272.0105">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-spacing-2 u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/admin/Users">Users</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/admin/Tasks">Tasks</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-spacing-2 u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/adminUsers">Users</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/adminTasks">Tasks</a>
 </li></ul>
               </div>
             </div>
@@ -49,10 +49,10 @@
           </div>
         </nav>
         <div class="dropdown">
-          <img onclick="myFunction()" class="u-image u-image-circle u-image-2" src="assets/img/sonam.jpg" alt="" data-image-height="800" data-image-width="1200">
+          <img onclick="myFunction()" class="u-image u-image-circle u-image-2" src="./assetsAdmin/images/sonam.jpg" alt="" data-image-height="800" data-image-width="1200">
           <div id="myDropdown" class="dropdown-content">
-            <a href="/admin/profile">Admin</a>
-            <a href="/admin/login">Log out</a>
+            <a href="/adminprofile">Admin</a>
+            <a href="/admin">Log out</a>
           </div>
         </div>
        
@@ -112,7 +112,7 @@
 <!-------complete html----------->
 <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-308a" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
   <a class="u-image u-logo u-image-1" data-image-width="621" data-image-height="402">
-    <img src="assets/img/IMG_20221010_113058_320-removebg-preview.png" class="u-logo-image u-logo-image-1">
+    <img src="assetsAdmin/images/IMG_20221010_113058_320-removebg-preview.png" class="u-logo-image u-logo-image-1">
   </a>
   <p class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-text u-text-1"> Developers<br>Dorji Wangmo 12190006.gcit@rub.edu.bt<br>Norbu Wangchuk 12190016.gcit@rub.edu.bt<br>Sangay Lakshay Yangzom 12190022.gcit@rub.edu.bt<br>Tshelthrim Tenzin 12190031.gcit@rub.edu.bt&nbsp;
   </p>

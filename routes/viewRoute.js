@@ -12,8 +12,8 @@ router.get("/resetpassword", viewController.getforgotPass2);
 router.get("/passsuccess", viewController.getforgotPassSuccess);
 
 
-router.get('/admin/login', viewController.getAdminLogin)
-router.get('/admin/profile', viewController.getAdminProfile)
-router.get('/admin/Users', viewController.getAdminUser)
-router.get('/admin/Tasks', viewController.getAdminTask)
+router.get('/admin', viewController.getAdminLogin)
+router.get('/adminprofile', viewController.getAdminProfile)
+router.get('/adminUsers', viewController.getAdminUser)
+router.get('/adminTasks', viewController.getAdminTask)
 module.exports = router;
