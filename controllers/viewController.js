@@ -1,3 +1,6 @@
+const User = require('./../models/userModel')
+const AppError = require('./../utils/appError')
+
 const path = require("path");
 
 exports.getlandingpage = (req, res) => {
@@ -26,4 +29,20 @@ exports.getforgotPass2 = (req, res) => {
 
 exports.getforgotPassSuccess = (req, res) => {
     res.sendFile(path.join(__dirname, "../", "views", "forgotpassSuccess.html"));
+};
+
+exports.getAdminLogin = (req, res) => {
+    res.render('adminlogin');
+};
+
+exports.getAdminProfile = (req, res) => {
+    res.render("adminprofile");
+};
+
+exports.getAdminTask = (req, res) => {
+    res.render("adminTasks");
+};
+
+exports.getAdminUser = (req, res) => {
+    res.render("adminUsers");
 };

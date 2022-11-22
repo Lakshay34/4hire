@@ -9,15 +9,16 @@ const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 
-app.use(helmet({
-  contentSecurityPolicy: {
-    useDefaults: true, 
-    directives: { 
-      'script-src': ["'self'", "https://cdnjs.cloudflare.com/"]  
-    }
-  }
-})
-);
+app.set('view engine', 'ejs');
+// app.use(helmet({
+//   contentSecurityPolicy: {
+//     useDefaults: true, 
+//     directives: { 
+//       'script-src': ["'self'", "https://cdnjs.cloudflare.com/"]  
+//     }
+//   }
+// })
+// );
 app.use(express.json())
 app.use(cookieParser( ))
 
@@ -36,7 +37,6 @@ app.use(xss());
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/tasks', taskRouter)
 app.use('/', viewRouter);
-
 
 app.use(express.static(path.join(__dirname, 'views')));
 module.exports = app
