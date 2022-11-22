@@ -13,6 +13,7 @@
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="login">
     <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assetsAdmin/css/styles.css">
   </head>
   <body class="u-body u-xxl-mode" data-lang="en">
     <header class="u-clearfix u-header u-header" id="sec-fed0"><div class="u-clearfix u-sheet u-sheet-1">
@@ -34,20 +35,20 @@
                   <div class="u-form u-form-1">
                     <form  class="u-clearfix u-form-spacing-5 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
                       <div class="u-form-email u-form-group">
-                        <label for="name-7297" class="u-label">Email</label>
-                        <input type="email" placeholder="Enter your email" id="name-7297" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="required">
+                        <label for="name-7297" class="u-label" >Email</label>
+                        <input type="email" placeholder="Enter your email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="required">
                       </div>
                       <div class="u-form-group">
                         <label for="email-7297" class="u-label">Password</label>
-                        <input type="text" placeholder="Enter your password" id="email-7297" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required="required">
+                        <input type="password" placeholder="Enter your password" id="password" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required="required">
                       </div>
                       <p class="u-align-right u-form-group u-form-text u-hover-feature u-text u-text-2">
-                        <a class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-none u-text-palette-1-base u-btn-1" href="https://nicepage.com"> Forgot Password?</a>
+                        <a class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-none u-text-palette-1-base u-btn-1" href="/forgotpassword"> Forgot Password?</a>
                       </p>
                       <div class="u-align-center u-form-group u-form-submit">
-                        <a href="/adminUsers" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-btn-2">Log In<br>
+                        <a type="submit" id="submit" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-btn-2">Log In<br>
                         </a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
+                        <input type="submit" value="login" class="u-form-control-hidden">
                       </div>
 
                     </form>
@@ -81,5 +82,7 @@
         </a>
       </div>
     </div></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script type="module" src="js/login.js"></script>
   
 </body></html>

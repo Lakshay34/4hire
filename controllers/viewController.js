@@ -1,35 +1,29 @@
 const User = require('./../models/userModel')
+const Task = require('./../models/taskModel')
 const AppError = require('./../utils/appError')
 
 const path = require("path");
 
 exports.getlandingpage = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "landingpage.html"));
+    res.render("landingpage");
   };
 
 exports.getregisterForm = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "register.html"));
+    res.render("register");
 };
 
 exports.getloginForm = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "login.html"));
+    res.render("login");
 };
 
 exports.getprofile = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "profile.html"));
+    res.render("profile");
 };
 
 exports.getforgotPass = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "forgotpass.html"));
+    res.render("forgotpass");
 };
 
-exports.getforgotPass2 = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "forgotpass2.html"));
-};
-
-exports.getforgotPassSuccess = (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "views", "forgotpassSuccess.html"));
-};
 
 exports.getAdminLogin = (req, res) => {
     res.render('adminlogin');

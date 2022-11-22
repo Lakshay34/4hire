@@ -8,12 +8,10 @@ router.get("/register", viewController.getregisterForm);
 router.get("/login", authController.isLoggedIn, viewController.getloginForm);
 router.get("/profile", authController.isLoggedIn, viewController.getprofile);
 router.get("/forgotpassword", viewController.getforgotPass);
-router.get("/resetpassword", viewController.getforgotPass2);
-router.get("/passsuccess", viewController.getforgotPassSuccess);
 
 
 router.get('/admin', viewController.getAdminLogin)
-router.get('/adminprofile', viewController.getAdminProfile)
-router.get('/adminUsers', viewController.getAdminUser)
-router.get('/adminTasks', viewController.getAdminTask)
+router.get('/adminprofile',authController.protect, authController.restrictTo("admin"), viewController.getAdminProfile)
+router.get('/adminUsers', authController.protect, authController.restrictTo("admin"), viewController.getAdminUser)
+router.get('/adminTasks', authController.protect, authController.restrictTo("admin"), viewController.getAdminTask)
 module.exports = router;

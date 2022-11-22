@@ -1,29 +1,34 @@
 import { showAlert } from './alert.js'
 // const axios = require('axios');
 
-const login = async (email, password) => {
-        try {
-        const res = await axios({
-        method: 'POST',
-        url: 'http://localhost:4001/api/v1/users/login',
-        data: {
-          email,
-          password
-        },
-      });
-      if (res.data.status === 'success') {
-        
-        showAlert('success', 'Logged in successfully!');
-        window.setTimeout(() => {
-          location.assign('/profile');
-        }, 500);
+const login = async (email, password, role) => {
+  try {
+    console.log(email, password, role)
+    const res = await axios({
+    method: 'POST',
+    url: 'http://localhost:4001/api/v1/users/login',
+    data: {
+      email,
+      password
+    },
+  });
+  if (res.data.status === 'success') {
+    showAlert('success', 'Logged in successfully!');
+    window.setTimeout(() => {
+      if ( role == 'user' ) {
+        location.assign('/profile');
+      } 
+      if ( role == "admin" ) {
+        location.assign('/adminUsers');
       }
       
-    } catch (err) {   
-      console.log(err);
-       
-    }
-  };
+    }, 500);   
+  }
+  } catch (err) {   
+    console.log(err)
+    showAlert('error', err);
+  }
+};
 
 const logout = async () => {
   try {
@@ -39,6 +44,7 @@ const logout = async () => {
 };
 
 const loginForm = document.querySelector(".form-container");
+const adminlogin = document.getElementById("submit")
 const logoutBt = document.getElementById("logout");
 
 if (logoutBt)
@@ -49,6 +55,16 @@ if (loginForm)
     e.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    login(email, password);
+    console.log(email, password)
+    login(email, password, 'user');
+  })
+
+if (adminlogin)
+  adminlogin.addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    console.log(email, password, 'admin')
+    login(email, password, 'admin');
   })
 

@@ -1,10 +1,11 @@
+<!--EMMET: html:5-->
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>WELCOME</title>
+    <title>4Hire</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -29,28 +30,40 @@
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav text-capitalize float-right ml-auto" style="margin-top: px;">
                     <li class="nav-item" role="presentation"><a class="nav-link text-capitalize" uk-scroll="offset:50" style="color: #000000;" href="/login">login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link text-capitalize" uk-scroll="offset:100" href="/register" style="color: #000000;">Register</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link text-capitalize" uk-scroll="offset:100" href="#" style="color: #000000;">Register</a></li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"></li>
                 </ul>
         </div>
         </div>
     </nav>
-    <div class="register-photo" style="background-color:  #FFFFFF;">
+    <div class="register-photo" style="background-color: #FFFFFF;margin-top: px;margin-bottom: px;">
         <div class="form-container">
-            <div class="image-holder" style="background-image: url(&quot;assets/img/forgot-password%20pic.png&quot;);background-position: top;"></div><form method="post"  style="border:1px solid; border-radius: 15px";>
-    <h2 class="text-center" style="font-family: Roboto, sans-serif;"><strong>Forgot Password</strong></h2>
-    <br>
+            <div class="image-holder" style="background-image: url(&quot;assets/img/register%20pic.png&quot;);background-size: cover;background-position: center;"></div><form method="post"  style="border:1px solid; border-radius: 15px"; >
+    <h2 class="text-center" style="font-family: Roboto, sans-serif;"><strong>Sign up</strong></h2>
     <div class="form-group">
-        <label>Enter email address</label>
+        <label>Name</label>
+        <input type="text" class="form-control" id="name" name="name"/>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
         <input type="email" class="form-control" id="email" name="email"/>
     </div>
-    <br><br>
-    
-    <a style="float:right; margin-bottom:10px; margin-top:0px; color:#0D9CEC;text-decoration: none" id="resend">Don't get mail, click here to resend</a>
-    <div class="form-group"><button class="btn btn-block" type="submit" style="background-color:#0D9CEC;font-family: Roboto, sans-serif; color:#fff" href="#">Reset Password</button></div><a class="already" href="/login" style="font-family: Roboto, sans-serif; color:#0D9CEC">Back to login</a></form></div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" id="password" name="password"/></div>
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm"/>
     </div>
-    <div class="footer-dark" style="margin-top: px;padding-top: 0px;">
+    <div class="form-group">
+        <div class="form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input" required/>
+            I agree to the <a style="color:#0D9CEC" href="#">Terms and Conditions</a> of 4Hire.</label></div>
+    </div>
+    <div class="form-group"><button class="btn btn-block" type="submit" style="background-color:#0D9CEC;font-family: Roboto, sans-serif; color:#fff" href="#">Join 4Hire</button></div>
+    <span class="already">Already have an account? <a href="/login" style="color:#0D9CEC">Log In</a> </span></form></div>
+    </div>
+    <div class="footer-dark" style="padding-top: 0px;margin-top: 20px;">
         <footer>
             <div class="container">
                 <div class="row">
@@ -69,11 +82,13 @@
             </div>
         </footer>
     </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.js"></script> -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Advanced-NavBar---Multi-dropdown.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
-    <script type="module" src="js/forgotpassword.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
+    <script type="module" src="js/register.js"></script>
+    
 </body>
 
 </html>
