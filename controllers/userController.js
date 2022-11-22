@@ -30,6 +30,14 @@ const upload = multer({
 
 exports.uploadUserPhoto = upload.single('photo');
 
+const filterObj = (obj, ...allowedFields) => {
+  const newObj = {}
+  Object.keys(obj).forEach((el) => {
+      if (allowedFields.includes(el)) newObj[el] = obj[el]
+  })
+  return newObj
+}
+
 exports.updateMe = async (req, res, next) => {
     // 1) Create error if user POSTs password data
     if (req.body.password || req.body.passwordConfirm) {
