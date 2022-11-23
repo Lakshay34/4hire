@@ -1,48 +1,53 @@
-const User = require('./../models/userModel')
-const Task = require('./../models/taskModel')
-const AppError = require('./../utils/appError')
-const catchAsync = require('./../utils/catchAcync');
+const User = require("./../models/userModel");
+const Task = require("./../models/taskModel");
+const AppError = require("./../utils/appError");
+const catchAsync = require("./../utils/catchAcync");
 
 const path = require("path");
-const { nextTick } = require('process');
+const { nextTick } = require("process");
 
 exports.getlandingpage = (req, res) => {
-    res.render("landingpage");
-  };
+  res.render("landingpage");
+};
 
 exports.getregisterForm = (req, res) => {
-    res.render("register");
+  res.render("register");
 };
 
 exports.getloginForm = (req, res) => {
-    res.render("login");
+  res.render("login");
 };
 
 exports.getprofile = (req, res) => {
-    res.render("profile");
+  res.render("profile");
+};
+
+exports.getprofileofappliedusers = (req, res) => {
+  res.render("ProfilePageofapplieduser");
 };
 
 exports.getforgotPass = (req, res) => {
-    res.render("forgotpass");
+  res.render("forgotpass");
 };
 
-
 exports.getAdminLogin = (req, res) => {
-    res.render('adminlogin');
+  res.render("adminlogin");
 };
 
 exports.getAdminProfile = (req, res) => {
-    res.render("adminprofile");
+  res.render("adminprofile");
 };
 
-exports.getAdminTask = catchAsync(async(req, res, next) => {
-    const tasks = await Task.find();
-    res.status(200).render('adminTasks', {
-        tasks
-    })
-    
+exports.getAdminTask = catchAsync(async (req, res, next) => {
+  const tasks = await Task.find();
+  res.status(200).render("adminTasks", {
+    tasks,
+  });
 });
 
-exports.getAdminUser = (req, res) => {
-    res.render("adminUsers");
-};
+exports.getAdminUser = catchAsync(async (req, res, next) => {
+  const users = await User.find({ role: "user" });
+  res.status(200).render("adminUsers", {
+    users,
+  });
+});

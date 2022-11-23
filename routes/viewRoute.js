@@ -7,6 +7,7 @@ router.get("/", viewController.getlandingpage);
 router.get("/register", viewController.getregisterForm);
 router.get("/login", authController.isLoggedIn, viewController.getloginForm);
 router.get("/profile", authController.isLoggedIn, viewController.getprofile);
+router.get("/applieduser", viewController.getprofileofappliedusers);
 router.get("/forgotpassword", viewController.getforgotPass);
 
 
