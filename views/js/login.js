@@ -16,7 +16,7 @@ const login = async (email, password, role) => {
       showAlert("success", "Logged in successfully!");
       window.setTimeout(() => {
         if (role == "user") {
-          location.assign("/profile");
+          location.assign("/home");
         }
         if (role == "admin") {
           location.assign("/adminUsers");
@@ -46,14 +46,14 @@ const logout = async () => {
   }
 };
 
-const loginForm = document.querySelector(".form-container");
-const adminlogin = document.getElementById("submit");
+const loginForm = document.getElementById("Usersubmit");
+const adminlogin = document.getElementById("Adminsubmit");
 const logoutBt = document.getElementById("logout");
 
 if (logoutBt) logoutBt.addEventListener("click", logout);
 
 if (loginForm)
-  loginForm.addEventListener("submit", (e) => {
+  loginForm.addEventListener("click", (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;

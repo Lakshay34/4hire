@@ -5,21 +5,26 @@ const userRouter = require("./routes/userRoutes");
 const taskRouter = require("./routes/taskRoutes");
 const viewRouter = require("./routes/viewRoute");
 const cookieParser = require("cookie-parser");
+const passport = require('passport');
+const session = require('express-session');
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 
+
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: {
+//       directives: {
+//         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+//         "script-src": ["'self'", "'unsafe-inline'", "example.com"],
+//       },
+//     },
+//   })
+// );
 app.set("view engine", "ejs");
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      useDefaults: true,
-      directives: {
-        "script-src": ["'self'", "https://cdnjs.cloudflare.com/"],
-      },
-    },
-  })
-);
+
+app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 

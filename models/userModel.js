@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -43,7 +44,9 @@ const userSchema = new mongoose.Schema({
   skills: {
     type: Array,
   },
-
+  language: {
+    type: Array,
+  },
   rating: {
     type: Number,
     minimum: 0,
@@ -60,6 +63,7 @@ const userSchema = new mongoose.Schema({
 
   cv: {
     type: String,
+    default: "default.pdf",
   },
 
   JoinDate: {
@@ -136,5 +140,7 @@ userSchema.methods.createPasswordResetToken = function () {
   return resetToken;
 };
 
+
 const User = mongoose.model("User", userSchema);
+
 module.exports = User;

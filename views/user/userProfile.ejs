@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>4Hire</title>
+    <link rel="stylesheet" href="../assetsUser/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="../assetsUser/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assetsUser/css/Advanced-NavBar---Multi-dropdown.css">
+    <link rel="stylesheet" href="../assetsUser/css/best-carousel-slide.css">
+    <link rel="stylesheet" href="../assetsUser/css/card-3-column-animation-shadows-images.css">
+    <link rel="stylesheet" href="../assetsUser/css/cards.css">
+    <link rel="stylesheet" href="../assetsUser/css/Carousel_Image_Slider-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/Carousel_Image_Slider.css">
+    <link rel="stylesheet" href="../assetsUser/css/custom-buttons.css">
+    <link rel="stylesheet" href="../assetsUser/css/Dark-NavBar-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/Dark-NavBar-2.css">
+    <link rel="stylesheet" href="../assetsUser/css/Dark-NavBar.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-card-image-left-dark.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-header-cover-image-button.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-navbar-inverse-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-navbar-inverse-2.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-navbar-inverse.css">
+    <link rel="stylesheet" href="../assetsUser/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../assetsUser/css/gradient-navbar-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/gradient-navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assetsUser/css/icon-star-full.css">
+    <link rel="stylesheet" href="../assetsUser/css/Image_center.css">
+    <link rel="stylesheet" href="../assetsUser/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assetsUser/css/Logo.css">
+    <link rel="stylesheet" href="../assetsUser/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="../assetsUser/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../assetsUser/css/styles.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        /* background-color: #678d2100; */
+        min-width: 99px;
+        /* z-index: 1; */
+        margin-top: 20px;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        font-family: helvetica;
+        padding: 5px 5px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {
+        background: #1475c0;
+        color: #fff;
+      }
+      
+      hr.solid {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid #000000;
+        margin-top: -5px;
+        /* border-bottom: none; */
+      }
+      
+      .show {
+        display: block;
+      }
+      </style>
+    
+</head>
+<body class="text-capitalize text-left" style="color: #000000;font-family: Roboto, sans-serif;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean navbar-inverse navbar-fixed-top" style="background-color: rgb(255,255,255);">
+        <div class="container">
+            <div><a class="navbar-brand" style="padding:0px;margin-left:0px;height:78px;" href="/home"> 
+            <img class="img-fluid" src="../assetsUser/img/IMG_20221010_113058_320-removebg-preview.png"></a></div>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse text-center" id="navcol-1">
+                <ul class="nav navbar-nav text-capitalize ml-auto" style="margin-right: 10px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link text-capitalize" uk-scroll="offset:50" style="font-family: Roboto, sans-serif;color: #000000;font-weight: bold;" href="/home">Home </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link text-capitalize" uk-scroll="offset:100" href="/task" style="font-family: Roboto, sans-serif;color: #000000;font-weight: bold;">Tasks</a></li>
+                </ul>
+                <div class="dropdown" style="margin-left: 30px">
+
+                    <img class="dropbtn" id="drop"
+                        src="../assetsUser/img/sonam.jpg" style="margin-left:-30px; width: 50px; height :50px; border-radius: 30px;"/>
+                    
+                    <div id="myDropdown" class="dropdown-content" style=" margin-left: -70px; margin-top: 30px; width: 205px;">
+                      <div>
+                        <a href="/profile"><i class="fa fa-user" style="margin-right: 10px;"></i><%=user.name%> </a>
+                      </div>
+  
+                      <div>
+                        <a id="logout" style="padding-right:28px;"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Logout</a>
+                      </div>
+  
+  
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-container" style="background-image: url(&quot;assets/img/Header%20image.jpg&quot;);padding-top: 100px;padding-bottom: 175px;height: 5px;margin-top: -90px;"></div><img class="rounded-circle img-fluid" src="../assetsUser/img/sonam.jpg" style="height: 170px;width: 170px;margin-left: 60px;margin-top: -90px;">
+    <section style="margin-left: 280px;margin-top: -80px;">
+        <div class="container">
+            <h1 style="font-size: 20px;font-family: Roboto, sans-serif;font-weight: bold; margin-top: 10px;"><%=user.name%> </h1><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i>
+            <h1 style="font-family: Roboto, sans-serif;font-weight: bold;font-size: 16px;margin-top: 10px;"><i class="fa fa-location-arrow"></i>&nbsp;From <% =user.address %> &nbsp; &nbsp; &nbsp; &nbsp; <i class="fa fa-user-circle"></i>&nbsp;Joined <% =user.JoinDate %> </h1>
+            <a href="/editprofile"><button class="btn btn-primary buton" type="button" style="margin-top:-40px;">Edit Profile</button></a>
+        </div>
+        
+    </section>
+    <section style="margin-top: 20px;margin-bottom: 40px;"><div class="container">
+        <div class="row">
+            <div class="col-md-6" style="border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px;">
+                <h1 style="font-size: 18px;font-family: Roboto, sans-serif;font-weight: bold;margin-top: 16px;margin-left: 40px; padding-top: 25px">Languages</h1>
+                <h1 style="font-size: 16px;font-family: Roboto, sans-serif;margin-top: 20px;margin-left: 40px;">Dzongkha</h1>
+                <h1 style="font-size: 16px;font-family: Roboto, sans-serif;margin-left: 40px;margin-top: 20px;">English</h1>
+                <h1 style="font-size: 16px;font-family: Roboto, sans-serif;margin-left: 40px;margin-top: 20px;">Nepali</h1>
+                <hr style="margin-top:30px">
+                <h1 style="font-size: 18px;font-family: Roboto, sans-serif;font-weight: bold;margin-left: 40px;margin-top: 28px;">Skills</h1>
+                <% for (let skill of user.skills ) {%>
+                <button class="btn" type="button" style="  background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px; margin-left: 40px; margin-top: 30px; font-family: Roboto, sans-serif;"><% skill %></button>
+                <% } %> 
+                <hr style="margin-top: 30px;">
+                <h1 style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: bold;margin-top: 20px;margin-left: 40px;">My CV: <a href="#" style="color:light blue;"> my-cv.pdf</a></h1>
+            </div>
+    <!--         <hr style="border: none; margin-left:-2px; border-left: 1px solid; height: 70vh; width: 1px; ">  -->
+            <div class="col-md-6" style="border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px;">
+                <h1 style="font-size: 18px;font-family: Roboto, sans-serif;font-weight: bold;margin-top: 16px;margin-left: 40px; padding-top: 25px">Description</h1>
+                <p style="margin-top: 10px;margin-left: 40px;"><% =user.description %> </p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<div class="bbb1">
+    <img class="rounded-circle rounded-circle" src="../assetsUser/img/Dophu.jpeg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;">
+        <h1 style="margin-top: -50px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;">Dophu</h1>
+        <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;">03/09/22</h1>
+        <h1 style="margin-top: -28px; margin-left:150px; color: #000000; font-weight: normal; font-size: 16px;">Due: 30/09/22</h1>
+        <a href="#"><i class="fa fa-flag-o" style="margin-left: 950px; margin-right: 5px; margin-top: -26px; float: right; color: #E0293F"></i></a>
+    <div class="bbb5">
+            <p style="margin-top:-15px; margin-left: -50px;"><br>Logo Name : EAZY ADDA&nbsp;<br></p>
+            <p style="margin-top:-45px; margin-left: -50px;"><br>Logo Type: Word Mark Logo<br></p>
+            <p style="margin-top:-20px; margin-left: -50px;">You Have To Higlight E &amp; A<br></p>
+            <p style="margin-top:5px; margin-left: -50px;">Its An App Like OLX, Quikr<br></p>
+            <p style="margin-top:13px; margin-left: -50px;">Recommended Skills<br></p>
+            <p style="margin-top:-18px; margin-left: -50px;">Android Graphic Design, Logo Design, Photoshop Website Design&nbsp;<br></p>
+    </div>
+</div>
+
+    <div class="container">
+    <div class="bbb2">
+        <div class="b"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 54px;height: 54px;left: 1250px;top: 13px;margin-left: 19px; margin-top: 10px;">
+            <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Sonam Wangmo</p>
+            <p style="margin-top:-15px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">09/10/22</p>
+            <p style="margin-top: -42px; margin-left: 190px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: 30/09/22</p>
+        </div>
+        <div class="bbb3">
+            <p style="margin-top: 10px; margin-left: 20px;">-Cover Letter Makeover</p>
+            <p style="margin-top: 10px; margin-left: 20px;">-Linkedln Profile Makeover</p>
+            <p style="margin-top: 10px; margin-left: 20px;">-Resume Writing</p>
+            <p style="margin-top: -23px; margin-left: 20px;"><br>Skills: Resumes, Copywriting, Content Writing, Creative Writing, Article Writing<br></p>
+        </div>
+        <button class="btn btn-secondary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 600px; margin-top: 10px; margin-right: 200px; float: right;">Delete</button>
+        <a href="#"><button class="btn btn-primary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 910px; margin-top: -36px;">Edit</button></a>
+        <div class="bbb4">
+            <p style="margin-top: -20px; margin-left: -20px;">Accepted</p>
+           
+            <div class="row">
+                <div class="col-lg-3 col-md-2 small0" >
+                    <a href="#"><img class="rounded-circle rounded-circle" style="width: 50px;height: 50px; margin-left: -20px;" src="../assetsUser/img/Dorji.jpg"></a>
+                </div>
+                <div class="col-lg-2 col-md-2 small01">
+                    <p style="margin-left: -10px; margin-top: 10px;" >Dorji</p>
+                </div>
+                <div class="col-lg-2 col-md-2 small02">
+                    <i class="fa fa-star" style="margin-left: -10px; margin-top: 10px; color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star fa-star" style="color: #D9D9D9"></i><i class="fa fa-star fa-star" style="color: #D9D9D9"></i>
+                </div>
+                <div class="col-lg-2 col-md-2 small03">
+                    <p class="contact" style="margin-left: -10px; margin-top: 10px;" >Contact</p>
+                </div>
+                <div class="col-lg-3  col-md-4 small04">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal3">Rate</button>
+                </div>
+              </div>
+            
+        </div>
+</div>
+    </div>
+
+    <script src="../assetsUser/js/jquery.min.js"></script>
+    <script src="../assetsUser/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assetsUser/js/Advanced-NavBar---Multi-dropdown.js"></script>
+
+    <script>
+        document.getElementById("drop").addEventListener("click", function(e) {
+      document.getElementById("myDropdown").classList.toggle("show");
+    });
+    
+    
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener("click", function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        document.querySelectorAll(".dropdown-content.show")
+          .forEach(openDropdown => openDropdown.classList.remove('show'))
+      }
+    });
+</script>
+</body>
+
+</html>

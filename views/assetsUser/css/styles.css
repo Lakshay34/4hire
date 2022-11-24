@@ -1,0 +1,111 @@
+@media(max-width:500px){
+    .row{
+        margin-bottom: 8rem;
+    }
+    .small{
+        position: absolute;
+        left: 3rem;
+        top: 33.5rem;
+    }
+    .small1{
+        position: absolute;
+        left:8rem;
+    }
+    .small2{
+        position: absolute;
+        left: 8rem;
+        top:35rem;
+    }
+    .small3{
+        position: absolute;
+        left: 8rem;
+        top:37rem;
+    }
+    .small4{
+        position: absolute;
+        left:-0.5rem;
+        top:34rem;
+        
+    }
+
+    .buton{
+        margin-top:-50px; 
+        margin-left:550px; 
+        width: 150px;
+        height: 36px; 
+        left: 931px; 
+        top: 92px;
+        background: #67A4F9; 
+        border-radius: 10px;
+
+    }
+
+    @media(max-width:500px){
+        .buton{
+            margin-top: 2rem;
+            margin-left: 10rem;
+        }
+    }
+
+
+    .smalltwo{
+        position: absolute;
+        left: 3rem;
+
+    }
+    .smalltwo1{
+        position: absolute;
+        left: 8rem;
+        
+
+    }
+    .smalltwo2{
+        position: absolute;
+        left: 8rem;
+        top:43rem;
+    }
+    .smalltwo3{
+        position: absolute;
+        left: 8rem;
+        top:45rem;
+    }
+    .smalltwo4{
+        position: absolute;
+        left:-0.5rem;
+        top:42rem;
+        
+
+
+    }
+    
+}
+@media(max-width:500px){
+    .row{
+        margin-bottom: 8rem;
+    }
+    .small0{
+        position: absolute;
+        left: 3rem;
+        top: 148.5rem;
+    }
+    .small01{
+        position: absolute;
+        left:8rem;
+        top: 147.5rem;
+    }
+    .small02{
+        position: absolute;
+        left: 8rem;
+        top:149rem;
+    }
+    .small03{
+        position: absolute;
+        left: 8rem;
+        top:150rem;
+    }
+    .small04{
+        position: absolute;
+        left:-0.5rem;
+        top:148.5rem;
+        
+    }
