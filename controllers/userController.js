@@ -8,9 +8,9 @@ const multerStorage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
 
-    var obj = JSON.parse(req.cookies.token)
+    // var obj = JSON.parse(req.cookies.token)
     const ext = file.mimetype.split('/')[1];
-    cb(null, `user-${obj['_id']}-${Date.now()}.${ext}`);
+    cb(null, `user-${Date.now()}.${ext}`);
   }
 });
 // const multerStorage = multer.memoryStorage();
@@ -51,7 +51,7 @@ exports.updateMe = async (req, res, next) => {
     }
   
     // 2) Filtered out unwanted fields names that are not allowed to be updated
-    const filteredBody = filterObj(req.body, 'name', 'email', 'language','skills', 'description', 'address', 'cv', 'photo');
+    const filteredBody = filterObj(req.body, 'name', 'email', 'language','skills', 'description', 'address');
     if (req.body.photo !== 'undefined' || req.body.cv !== "undefined"){
       filteredBody.photo = req.files['photo'][0]
       filteredBody.cv = req.files['cv'][0]

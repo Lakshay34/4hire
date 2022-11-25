@@ -14,7 +14,7 @@ router.patch('/resetPassword/:token', authController.resetPassword)
 
 router.patch('/updatePassword',authController.protect, authController.updatePassword)
 
-router.patch('/updateDetails', authController.protect, userController.uploadUserfile,userController.updateMe);
+router.patch('/updateDetails', authController.protect, userController.uploadUserfile, userController.updateMe);
 router.delete('/deleteAccount', authController.protect, userController.deleteMe);
 
 // router.use(authController.restrictTo('admin'));
