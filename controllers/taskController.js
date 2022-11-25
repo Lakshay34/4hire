@@ -1,6 +1,24 @@
 const Task = require('./../models/taskModel')
 const AppError = require('./../utils/appError')
 
+exports.applyforTask = async (req, res, next) => {
+    try {
+        const tasks = await Task.findByIdAndUpdate(req.params.id);
+        const currentuser = req.user.id
+        res.json({data: data, status: 'Success'});
+
+    } catch (err) {
+        res.status(500).json({error: err.message});
+    }
+}
+
+const filterObj = (obj, ...allowedFields) => {
+    const newObj = {}
+    Object.keys(obj).forEach((el) => {
+        if (allowedFields.includes(el)) newObj[el] = obj[el]
+    })
+    return newObj
+  }
 
 exports.updateTask = async (req, res, next) => {
      

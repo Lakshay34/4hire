@@ -4,7 +4,7 @@ const multer = require('multer')
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'views/img/user/');
+    cb(null, 'views/img/userImg/');
   },
   filename: (req, file, cb) => {
 
@@ -16,7 +16,7 @@ const multerStorage = multer.diskStorage({
 // const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image')) {
+  if (file.mimetype.startsWith('image') || file.mimetype == "application/pdf") {
     cb(null, true);
   } else {
     cb(new AppError('Not an image! Please upload only images.', 400), false);
@@ -28,7 +28,8 @@ const upload = multer({
   fileFilter: multerFilter
 });
 
-exports.uploadUserPhoto = upload.single('photo');
+exports.uploadUserfile = upload.fields([{name: "photo", maxCount: 1}, {name: "cv", maxCount: 1}]);
+
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {}
@@ -51,7 +52,11 @@ exports.updateMe = async (req, res, next) => {
   
     // 2) Filtered out unwanted fields names that are not allowed to be updated
     const filteredBody = filterObj(req.body, 'name', 'email', 'language','skills', 'description', 'address', 'cv', 'photo');
-  
+    if (req.body.photo !== 'undefined' || req.body.cv !== "undefined"){
+      filteredBody.photo = req.files['photo'][0]
+      filteredBody.cv = req.files['cv'][0]
+    }
+
     // 3) Update user document
     const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
       new: true,

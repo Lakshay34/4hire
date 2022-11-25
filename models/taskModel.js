@@ -25,10 +25,12 @@ const taskSchema = new mongoose.Schema({
     default: false,
   },
 
-  applied: {
-    type: String,
-    enum: [],
-  },
+  applied: [{
+   id: { 
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    }
+  }],
 
   postedBy: {
     id: {

@@ -5,12 +5,10 @@ const userRouter = require("./routes/userRoutes");
 const taskRouter = require("./routes/taskRoutes");
 const viewRouter = require("./routes/viewRoute");
 const cookieParser = require("cookie-parser");
-const passport = require('passport');
-const session = require('express-session');
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
-
+const moment = require("moment");
 
 // app.use(
 //   helmet({
@@ -22,11 +20,17 @@ const xss = require("xss-clean");
 //     },
 //   })
 // );
+// app.use(helmet.contentSecurityPolicy())
 app.set("view engine", "ejs");
 
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
+
+app.use((req, res, next)=>{
+  res.locals.moment = moment;
+  next();
+});
 
 // Test middleware
 app.use((req, res, next) => {

@@ -1,8 +1,12 @@
 import { showAlert } from "./alert.js";
 
-export const updateSettings = async (form) => {
+export const updateSettings = async (form, passwordCurrent, password, passwordConfirm) => {
   try {
-    console.log(name, email, passwordCurrent, password, passwordConfirm);
+    
+      for (const value of form.values()) {
+        console.log(value);
+      }
+  
     const res = await axios.all([
       axios({
         method: "PATCH",
@@ -15,7 +19,9 @@ export const updateSettings = async (form) => {
         method: "PATCH",
         url: "http://localhost:4001/api/v1/users/updatePassword",
         data: {
-          form
+          passwordCurrent, 
+          password, 
+          passwordConfirm
         },
       }),
     ]);
@@ -23,7 +29,7 @@ export const updateSettings = async (form) => {
     if (res[0].data.status === "success" && res[1].data.status === "success") {
       showAlert("success", "Data updated successfully!");
       window.setTimeout(() => {
-        location.reload(true);
+        location.assign('/profile');
       }, 1000);
     }
   } catch (err) {
@@ -32,10 +38,10 @@ export const updateSettings = async (form) => {
   }
 };
 
-const update = document.querySelector(".vh-100");
+const update = document.getElementById("submit");
 
 if (update)
-  update.addEventListener("submit", (e) => {
+  update.addEventListener("click", (e) => {
     e.preventDefault()
     const form = new FormData()
     form.append( 'name', document.getElementById("name").value);
@@ -45,9 +51,9 @@ if (update)
     form.append( 'description', document.getElementById("description").value);
     form.append( 'photo', document.getElementById("photo").files[0]);
     form.append( 'cv', document.getElementById("cv").files[0]);
-    form.append( 'passwordCurrent', document.getElementById("currentpassword").value);
-    form.append( 'password', document.getElementById("newpassword").value);
-    form.append( 'passwordConfirm',  document.getElementById("confirmpassword").value);
+    var passwordCurrent = document.getElementById("passwordCurrent").value;
+    var password = document.getElementById("password").value;
+    var passwordConfirm = document.getElementById("passwordConfirm").value;
 
-    updateSettings(form);
+    updateSettings(form, passwordCurrent, password, passwordConfirm);
   });

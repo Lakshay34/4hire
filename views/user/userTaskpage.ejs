@@ -104,33 +104,34 @@
                     
                     <div id="myDropdown" class="dropdown-content" style=" margin-left: -70px; margin-top: 30px; width: 205px;">
                       <div>
-                        <a href="/profile"><i class="fa fa-user" style="margin-right: 10px;"></i>Username</a>
+                        <a href="/profile"><i class="fa fa-user" style="margin-right: 10px;"></i><%=user.name%> </a>
                       </div>
   
                       <div>
-                        <a id="logout" style="padding-right:28px;"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Logout</a>
+                        <a id="logout" style="padding-right:28px;color: #000000;"><i class="fas fa-sign-out-alt" style="margin-right: 10px; color: #000000;"></i>Logout</a>
                     </div>
                 
             </div>
         </div>
     </nav>
 
+    <% if (tasks.length) { %> <% for (let Task of tasks ) {%>
     <div class="container">
         <div class="b"><a href="/profile"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 50px; height: 50px; left: 1250px; top: 13px; margin-left: 19px; margin-top: 10px;"></a>
-            <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Sonam Wangmo</p>
-            <p style="margin-top:-15px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">09/10/22</p>
-            <p style="margin-top: -38px; margin-left: 190px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: 30/09/22</p>
-        </div>
+            <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=Task.postedBy.name%> </p>
+            <p style="margin-top:-15px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=moment(Task.postDate).format('Do MMMM, YYYY')%> </p>
+            <p style="margin-top: -38px; margin-left: 390px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: <%=Task.dueDate%> </p>
+        <br>
+          </div>
         <div class="b1">
-            <p style="margin-top: 10px; margin-left: 20px;">-Cover Letter Makeover</p>
-            <p style="margin-top: 10px; margin-left: 20px;">-Linkedln Profile Makeover</p>
-            <p style="margin-top: 10px; margin-left: 20px;">-Resume Writing</p>
-            <p style="margin-top: -23px; margin-left: 20px;"><br>Skills: Resumes, Copywriting, Content Writing, Creative Writing, Article Writing<br></p>
+            <p style="margin-top: 10px; margin-left: 20px;"><%=Task.description%> </p>
+            
         </div>
-        <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 600px; margin-top: 10px; margin-right: 200px; float: right;" >Delete</button>
+        <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2<%=Task.id%>" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 600px; margin-top: 10px; margin-right: 200px; float: right;" >Delete</button>
     
         <a href="#"><button class="btn btn-primary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 910px; margin-top: -36px;">Edit</button></a>
         
+        <% if (Task.applied.length) {  %> <% for (let applie of Task.applied ) {%> 
         <div class="b2">
                 <p style="margin-top: -20px; margin-left: -45px;">list of applied</p>
                 <br>
@@ -196,28 +197,35 @@
 
   </div>
   </div>
-
-        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <% } %> <% } else { %>
+    <div class="b2">No one has applied yet</div>
+    <br>
+  <% } %>
+        <div class="modal fade" id="exampleModal2<%=Task.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content" >
             <div class="modal-header">
             
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" value="<%=Task.id%>">
             Are you sure you want to delete this task? 
             </div>
             <div class="modal-footer">
                 <button type="button" style="background-color:#B9B7B7; color:#ffffff;" id="ni"   class="btn btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button"  style="background-color:#67A4F9; color:#ffffff;" id="nim" class="btn btn-sm ">Confirm</button>
+                <button type="button"  style="background-color:#67A4F9; color:#ffffff;" id="DeleteTask" class="btn btn-sm ">Confirm</button>
             </div>
         </div>
       </div>
     </div>
 
     </div>
+
+    <% } %> <% } else { %>
+      <div class="b2">You have not posted any tasks</div>
+    <% } %>
     
     <script src="../assetsUser/js/jquery.min.js"></script>
     <script src="../assetsUser/bootstrap/js/bootstrap.min.js"></script>
@@ -226,7 +234,7 @@
     <script src="../assetsUser/js/jquery.min.js"></script>
     <script src="../assetsUser/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assetsUser/js/Advanced-NavBar---Multi-dropdown.js"></script>
-
+    <link rel="stylesheet" href="../assetsUser/css/stylesalert.css">
     <script>
         document.getElementById("drop").addEventListener("click", function(e) {
           document.getElementById("myDropdown").classList.toggle("show");
@@ -243,7 +251,8 @@
     </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
-<script src="../js/login.js"></script>
+<script type="module" src="../js/login.js"></script>
+<script type="module" src="../js/userDeleteTask.js"></script>
 </body>
 
 </html>

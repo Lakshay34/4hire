@@ -28,27 +28,44 @@ exports.getloginForm = (req, res) => {
 // User Pages
 exports.getHome = catchAsync(async(req, res) => {
   const tasks = await Task.find();
- 
   res.render("user/userHomepage", {
     user: req.user,
     tasks
   });
 });
 
-exports.getTask = (req, res) => {
-  res.render("user/userTaskpage");
-};
+exports.getTask = catchAsync(async(req, res) => {
+  const tasks = await Task.find({ 'postedBy.name' : req.user.name })
+  res.render("user/userTaskpage", {
+    user: req.user,
+    tasks
+  });
+});
 
 exports.getEditUser = (req, res) => {
-  res.render("user/editUserProfile");
+  res.render("user/editUserProfile", {
+    user: req.user
+  });
 };
+
+exports.getEditTask = catchAsync(async(req, res) => {
+  const task = await Task.findById(req.params.id)
+  res.render("user/addTask", {
+    user : req.user,
+    task
+  });
+});
 
 exports.getprofile = (req, res) => {
-  res.render("user/userProfile");
+  res.render("user/userProfile", {
+    user: req.user,
+  })
 };
 
-exports.getprofileofappliedusers = (req, res) => {
-  res.render("user/applieduser");
+exports.getprofileofapplieduser = (req, res) => {
+  res.render("user/appliedUser", {
+    user: req.user
+  });
 };
 
 

@@ -35,6 +35,7 @@ const logout = async () => {
       method: "GET",
       url: "http://127.0.0.1:4001/api/v1/users/logout",
     });
+    console.log(res)
     if ((res.data.status = "success")) {
       window.setTimeout(() => {
         location.assign("/");
