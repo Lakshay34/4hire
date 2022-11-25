@@ -3,9 +3,8 @@ const AppError = require('./../utils/appError')
 
 exports.applyforTask = async (req, res, next) => {
     try {
-        const tasks = await Task.findByIdAndUpdate(req.params.id);
-        const currentuser = req.user.id
-        res.json({data: data, status: 'Success'});
+        const task = await Task.updateOne({id:req.body.id}, {$addToSet:{applied : req.body.user}});
+        res.json({data: task, status: 'Success'});
 
     } catch (err) {
         res.status(500).json({error: err.message});
@@ -20,17 +19,16 @@ const filterObj = (obj, ...allowedFields) => {
     return newObj
   }
 
-exports.updateTask = async (req, res, next) => {
+exports.updateUserTask = async (req, res, next) => {
      
     // 2) Filtered out unwanted fields names that are not allowed to be updated
     const filteredBody = filterObj(req.body, 'title', 'description', 'dueDate');
   
     // 3) Update user document
-    const updatedTask = await Task.findByIdAndUpdate(req.user.id, filteredBody, {
+    const updatedTask = await Task.findByIdAndUpdate(req.params.id, filteredBody, {
       new: true,
       runValidators: true
     });
-  
     res.status(200).json({
       status: 'success',
       data: {
@@ -39,8 +37,8 @@ exports.updateTask = async (req, res, next) => {
     });
   };
   
-  exports.deleteTask = async (req, res, next) => {
-    await Task.findByIdAndUpdate(req.user.id, { active: false });
+  exports.deleteUserTask = async (req, res, next) => {
+    await Task.findByIdAndUpdate(req.params.id, { active: false });
   
     res.status(204).json({
       status: 'success',

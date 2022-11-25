@@ -26,10 +26,9 @@ const taskSchema = new mongoose.Schema({
   },
 
   applied: [{
-   id: { 
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    }
+    unique: true
   }],
 
   postedBy: {
@@ -38,6 +37,12 @@ const taskSchema = new mongoose.Schema({
       ref: "User",
     },
     name: String,
+  },
+
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
   },
 });
 

@@ -120,7 +120,7 @@
         <div class="b"><a href="/profile"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 50px; height: 50px; left: 1250px; top: 13px; margin-left: 19px; margin-top: 10px;"></a>
             <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=Task.postedBy.name%> </p>
             <p style="margin-top:-15px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=moment(Task.postDate).format('Do MMMM, YYYY')%> </p>
-            <p style="margin-top: -38px; margin-left: 390px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: <%=Task.dueDate%> </p>
+            <p style="margin-top: -38px; margin-left: 290px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: <%=Task.dueDate%> </p>
         <br>
           </div>
         <div class="b1">
@@ -129,7 +129,7 @@
         </div>
         <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2<%=Task.id%>" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 600px; margin-top: 10px; margin-right: 200px; float: right;" >Delete</button>
     
-        <a href="#"><button class="btn btn-primary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 910px; margin-top: -36px;">Edit</button></a>
+        <a href="/edittask?id=<%=Task.id%> "><button class="btn btn-primary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 910px; margin-top: -36px;">Edit</button></a>
         
         <% if (Task.applied.length) {  %> <% for (let applie of Task.applied ) {%> 
         <div class="b2">

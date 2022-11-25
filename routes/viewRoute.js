@@ -14,6 +14,7 @@ router.get("/home", authController.isLoggedIn, viewController.getHome)
 router.get("/task", authController.isLoggedIn, viewController.getTask)
 router.get("/profile", authController.isLoggedIn, viewController.getprofile);
 router.get("/editprofile", authController.isLoggedIn, viewController.getEditUser);
+router.get("/addtask", authController.isLoggedIn, viewController.getAddTask);
 router.get("/edittask", authController.isLoggedIn, viewController.getEditTask);
 router.get("/applieduser", authController.isLoggedIn, viewController.getprofileofapplieduser);
 

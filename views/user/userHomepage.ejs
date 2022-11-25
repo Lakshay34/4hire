@@ -114,7 +114,7 @@
     <div class="container">
         <div class="box" style="margin-right: 18px;">
             <a href="/profile"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;"></a>
-            <div class="box1"><a href="/edittask" style="color: black; margin-top: 10px; margin-bottom: -29px; margin-left: 20px; position: absolute;">Post task</a></div>
+            <div class="box1"><a href="/addtask" style="color: black; margin-top: 10px; margin-bottom: -29px; margin-left: 20px; position: absolute;">Post task</a></div>
         </div>
 
         <% if (tasks.length) { %> <% for (let Task of tasks ) {%>
@@ -122,8 +122,8 @@
             <div class="box2" style="margin-right: 18px;">
                 <img class="rounded-circle rounded-circle" src="../assetsUser/img/Dophu.jpeg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;">
                 <h1 style="margin-top: -50px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;"><%=Task.postedBy.name%></h1>
-                <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;"><%=moment(Task.postDate).format('Do MMMM, YYYY')%></h1>
-                <h1 style="margin-top: -28px; margin-left:550px; color: #000000; font-weight: normal; font-size: 16px;">Due: <%=Task.dueDate%></h1>
+                <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-size: 16px;"><%=moment(Task.postDate).format('Do MMMM, YYYY')%></h1>
+                <h1 style="margin-top: -28px; margin-left:250px; color: #000000; font-weight: normal; font-size: 16px;">Due: <%=Task.dueDate%></h1>
                 <a href="#"><i class="fa fa-flag-o" style="margin-left: 950px; margin-right: 30px; margin-top: -27px; float: right; color: #E0293F" data-toggle="modal" data-target="#exampleModal<%=Task.id%>"></i></a>
 
                 <!-- Button trigger modal -->
@@ -160,18 +160,18 @@
                 <div class="modal fade" id="exampleModal1<%=Task.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content" value="<%=Task.id%>">
-                <div class="modal-header">
+                <div class="modal-header" id="user" value="<%=user.id%>">
                 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                Applied for ths task, if the poster accepts then the task will show up on your profile 
+                Apply for ths task, if the poster accepts then the task will show up on your profile 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" style="background-color:#B9B7B7; color:#ffffff;" id="ni"   class="btn btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="button"  style="background-color:#67A4F9; color:#ffffff;" id="nim" class="btn btn-sm ">Confirm</button>
+                    <button type="button" style="background-color:#B9B7B7; color:#ffffff;" class="btn btn-sm" data-dismiss="modal">Cancel</button>
+                    <button type="button"  style="background-color:#67A4F9; color:#ffffff;" id="apply" class="btn btn-sm ">Confirm</button>
                 </div>
                 </div>
                 </div>
@@ -204,6 +204,7 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
 <script type="module" src="../js/login.js"></script>
+<script type="module" src="../js/applyfortask.js"></script>
 </body>
 
 </html>

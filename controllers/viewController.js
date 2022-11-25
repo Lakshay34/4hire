@@ -48,10 +48,15 @@ exports.getEditUser = (req, res) => {
   });
 };
 
-exports.getEditTask = catchAsync(async(req, res) => {
-  const task = await Task.findById(req.params.id)
+exports.getAddTask = catchAsync(async(req, res) => {
   res.render("user/addTask", {
     user : req.user,
+  });
+});
+
+exports.getEditTask = catchAsync(async(req, res) => {
+  const task = await Task.findById(req.query.id)
+  res.render("user/editTask", {
     task
   });
 });

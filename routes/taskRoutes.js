@@ -4,8 +4,9 @@ const authController = require('./../controllers/authController')
 const { route } = require('./viewRoute')
 const router = express.Router()
 
-router.patch('/updateTask', authController.protect, taskController.updateTask);
-router.delete('/deleteTask', authController.protect, taskController.deleteTask);
+router.patch('/updateTask', authController.isLoggedIn, taskController.updateUserTask);
+router.delete('/deleteTask', authController.isLoggedIn, taskController.deleteUserTask);
+router.patch('/applyforTask', authController.isLoggedIn, taskController.applyforTask);
 
 // router.use(authController.restrictTo('admin'));
 router
