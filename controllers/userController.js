@@ -7,19 +7,17 @@ const multerStorage = multer.diskStorage({
     cb(null, 'views/img/userImg/');
   },
   filename: (req, file, cb) => {
-
-    // var obj = JSON.parse(req.cookies.token)
     const ext = file.mimetype.split('/')[1];
-    cb(null, `user-${Date.now()}.${ext}`);
+    cb(null, `user-${req.user.id}-${Date.now()}.${ext}`);
   }
 });
 // const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image') || file.mimetype == "application/pdf") {
+  if (file.mimetype.startsWith('image') || file.mimetype=='application/pdf') {
     cb(null, true);
   } else {
-    cb(new AppError('Not an image! Please upload only images.', 400), false);
+    cb(new AppError('Not the corrrect format! Please upload only images or pdf.', 400), false);
   }
 };
 
@@ -28,8 +26,7 @@ const upload = multer({
   fileFilter: multerFilter
 });
 
-exports.uploadUserfile = upload.fields([{name: "photo", maxCount: 1}, {name: "cv", maxCount: 1}]);
-
+exports.uploadUserfile = upload.fields([{name:"photo"}, {name:"cv"}]);
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {}
@@ -53,8 +50,8 @@ exports.updateMe = async (req, res, next) => {
     // 2) Filtered out unwanted fields names that are not allowed to be updated
     const filteredBody = filterObj(req.body, 'name', 'email', 'language','skills', 'description', 'address');
     if (req.body.photo !== 'undefined' || req.body.cv !== "undefined"){
-      filteredBody.photo = req.files['photo'][0]
-      filteredBody.cv = req.files['cv'][0]
+      filteredBody.photo = req.files['photo'][0].filename
+      filteredBody.cv = req.files['cv'][0].filename
     }
 
     // 3) Update user document

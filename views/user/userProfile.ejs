@@ -98,7 +98,7 @@
                 <div class="dropdown" style="margin-left: 30px">
 
                     <img class="dropbtn" id="drop"
-                        src="../assetsUser/img/sonam.jpg" style="margin-left:-30px; width: 50px; height :50px; border-radius: 30px;"/>
+                        src="../img/userImg/<%=user.photo%>" style="margin-left:-30px; width: 50px; height :50px; border-radius: 30px;"/>
                     
                     <div id="myDropdown" class="dropdown-content" style=" margin-left: -70px; margin-top: 30px; width: 205px;">
                       <div>
@@ -115,11 +115,11 @@
         </div>
     </nav>
 
-    <div class="header-container" style="background-image: url(&quot;assets/img/Header%20image.jpg&quot;);padding-top: 100px;padding-bottom: 175px;height: 5px;margin-top: -90px;"></div><img class="rounded-circle img-fluid" src="../assetsUser/img/sonam.jpg" style="height: 170px;width: 170px;margin-left: 60px;margin-top: -90px;">
+    <div class="header-container" style="background-image: url(&quot;assets/img/Header%20image.jpg&quot;);padding-top: 100px;padding-bottom: 175px;height: 5px;margin-top: -90px;"></div><img class="rounded-circle img-fluid" src="../img/userImg/<%=user.photo%>" style="height: 170px;width: 170px;margin-left: 60px;margin-top: -90px;">
     <section style="margin-left: 280px;margin-top: -80px;">
         <div class="container">
             <h1 style="font-size: 20px;font-family: Roboto, sans-serif;font-weight: bold; margin-top: 10px;"><%=user.name%> </h1><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i>
-            <h1 style="font-family: Roboto, sans-serif;font-weight: bold;font-size: 16px;margin-top: 10px;"><i class="fa fa-location-arrow"></i>&nbsp;From <%=user.address%> &nbsp; &nbsp; &nbsp; &nbsp; <i class="fa fa-user-circle"></i>&nbsp;Joined <%=moment(user.JoinDate).format('Do MMMM, YYYY')%>%> </h1>
+            <h1 style="font-family: Roboto, sans-serif;font-weight: bold;font-size: 16px;margin-top: 10px;"><i class="fa fa-location-arrow"></i>&nbsp;From <%=user.address%> &nbsp; &nbsp; &nbsp; &nbsp; <i class="fa fa-user-circle"></i>&nbsp;Joined <%=moment(user.JoinDate).format('DD MMMM, YYYY')%>%> </h1>
             <a href="/editprofile"><button class="btn btn-primary buton" type="button" style="margin-top:-40px;">Edit Profile</button></a>
         </div>
         
@@ -137,7 +137,7 @@
                 <button class="btn" type="button" style="  background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px; margin-left: 40px; margin-top: 30px; font-family: Roboto, sans-serif;"><%=skill%></button>
                 <% } %> 
                 <hr style="margin-top: 30px;">
-                <h1 style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: bold;margin-top: 20px;margin-left: 40px;">My CV: <a href="#" style="color:light blue;"> my-cv.pdf</a></h1>
+                <h1 style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: bold;margin-top: 20px;margin-left: 40px;">My CV: <a href="<%=user.cv%>" style="color:light blue;" download><%=user.cv%></a></h1>
             </div>
     <!--         <hr style="border: none; margin-left:-2px; border-left: 1px solid; height: 70vh; width: 1px; ">  -->
             <div class="col-md-6" style="border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px;">

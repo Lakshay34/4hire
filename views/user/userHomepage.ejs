@@ -95,7 +95,7 @@
                 <div class="dropdown" style="margin-left: 30px">
 
                     <img class="dropbtn" id="drop"
-                        src="../assetsUser/img/sonam.jpg" style="margin-left:-30px; width: 50px; height :50px; border-radius: 30px;"/>
+                        src="../img/userImg/<%=user.photo%>" style="margin-left:-30px; width: 50px; height :50px; border-radius: 30px;"/>
                     
                     <div id="myDropdown" class="dropdown-content" style=" margin-left: -70px; margin-top: 30px; width: 205px;">
                       <div>
@@ -113,7 +113,7 @@
     </nav>
     <div class="container">
         <div class="box" style="margin-right: 18px;">
-            <a href="/profile"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;"></a>
+            <a href="/profile"><img class="rounded-circle rounded-circle" src="../img/userImg/<%=user.photo%>" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;"></a>
             <div class="box1"><a href="/addtask" style="color: black; margin-top: 10px; margin-bottom: -29px; margin-left: 20px; position: absolute;">Post task</a></div>
         </div>
 
@@ -122,8 +122,8 @@
             <div class="box2" style="margin-right: 18px;">
                 <img class="rounded-circle rounded-circle" src="../assetsUser/img/Dophu.jpeg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;">
                 <h1 style="margin-top: -50px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;"><%=Task.postedBy.name%></h1>
-                <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-size: 16px;"><%=moment(Task.postDate).format('Do MMMM, YYYY')%></h1>
-                <h1 style="margin-top: -28px; margin-left:250px; color: #000000; font-weight: normal; font-size: 16px;">Due: <%=Task.dueDate%></h1>
+                <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-size: 16px;"><%=moment(Task.postDate).format('DD MMMM, YYYY')%></h1>
+                <h1 style="margin-top: -28px; margin-left:250px; color: #000000; font-weight: normal; font-size: 16px;">Due: <%=Task.dueDate%> </h1>
                 <a href="#"><i class="fa fa-flag-o" style="margin-left: 950px; margin-right: 30px; margin-top: -27px; float: right; color: #E0293F" data-toggle="modal" data-target="#exampleModal<%=Task.id%>"></i></a>
 
                 <!-- Button trigger modal -->

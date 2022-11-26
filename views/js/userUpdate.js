@@ -11,9 +11,7 @@ export const updateSettings = async (form, passwordCurrent, password, passwordCo
       axios({
         method: "PATCH",
         url: "http://localhost:4001/api/v1/users/updateDetails",
-        data: {
-          form
-        },
+        data: form
       }),
       axios({
         method: "PATCH",
