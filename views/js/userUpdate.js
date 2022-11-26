@@ -31,7 +31,7 @@ export const updateSettings = async (form, passwordCurrent, password, passwordCo
       }, 1000);
     }
   } catch (err) {
-    // showAlert('error', err.response.data)
+    showAlert('error', err.response.data)
     console.log(err);
   }
 };
@@ -44,6 +44,7 @@ if (update)
     const form = new FormData()
     form.append( 'name', document.getElementById("name").value);
     form.append( 'email', document.getElementById("email").value);
+    form.append( 'address', document.getElementById("address").value);
     form.append( 'skills', document.getElementById("skills").value.split(","));
     form.append( 'language', document.getElementById("language").value.split(","));
     form.append( 'description', document.getElementById("description").value);

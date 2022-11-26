@@ -26,18 +26,20 @@ const taskSchema = new mongoose.Schema({
   },
 
   applied: [{
+    id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"
-  }],
+  }}],
 
   postedBy: {
-    id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-    name: String,
+      ref: "User"
   },
 
+  accepted: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  },
   active: {
     type: Boolean,
     default: true,

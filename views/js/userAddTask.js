@@ -14,7 +14,7 @@ const showAlert = (type, msg) => {
     window.setTimeout(hideAlert, 5000);
 };
 
-const addTask = async (title, dueDate, description, postDate, id, name) => {
+const addTask = async (title, dueDate, description, postDate, id) => {
   try {
     console.log(title, dueDate, description, postDate, id, name)
     const res = await axios({
@@ -25,9 +25,7 @@ const addTask = async (title, dueDate, description, postDate, id, name) => {
         dueDate:dueDate, 
         description:description, 
         postDate:postDate, 
-        postedBy: {
-            id, 
-            name}
+        postedBy: id,
       }
     });
     console.log(res)
@@ -52,8 +50,7 @@ if (addtask) {
     var dueDate = document.getElementById("dueDate").value;
     var description = document.getElementById("description").value;
     var id = document.getElementById('id').getAttribute("value");
-    var name = document.getElementById('name').getAttribute("value");
     var postDate = new Date()
-    addTask(title, dueDate, description, postDate, id, name);
+    addTask(title, dueDate, description, postDate, id);
   });
 }

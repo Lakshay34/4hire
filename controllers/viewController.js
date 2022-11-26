@@ -27,18 +27,28 @@ exports.getloginForm = (req, res) => {
 
 // User Pages
 exports.getHome = catchAsync(async(req, res) => {
-  const tasks = await Task.find();
+  const tasks = await Task.aggregate([
+    {
+      '$lookup': {
+        'from': 'users', 
+        'localField': 'postedBy', 
+        'foreignField': '_id', 
+        'as': 'result'
+      }
+    }
+  ]);
+  console.log(tasks)
   res.render("user/userHomepage", {
     user: req.user,
-    tasks
+     tasks: tasks.reverse()
   });
 });
 
 exports.getTask = catchAsync(async(req, res) => {
-  const tasks = await Task.find({ 'postedBy.name' : req.user.name })
+  const tasks = await Task.find({ "postedBy":req.user.id })
   res.render("user/userTaskpage", {
     user: req.user,
-    tasks
+    tasks: tasks.reverse()
   });
 });
 
@@ -61,11 +71,15 @@ exports.getEditTask = catchAsync(async(req, res) => {
   });
 });
 
-exports.getprofile = (req, res) => {
+exports.getprofile = catchAsync(async(req, res) => {
+  const usertask = await Task.find({"postedBy":req.user.id})
+  const acceptedtask = await Task.find({"accepted":req.user.id})
   res.render("user/userProfile", {
     user: req.user,
+    usertask,
+    acceptedtask
   })
-};
+});
 
 exports.getprofileofapplieduser = (req, res) => {
   res.render("user/appliedUser", {

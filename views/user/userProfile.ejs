@@ -148,34 +148,41 @@
     </div>
     
 </section>
+
+
+<h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 20px;">You have been Accepted for Task</h1>
+
+<% if (acceptedtask.length) { %> <% for (let Task of acceptedtask ) {%> 
 <div class="bbb1">
     <img class="rounded-circle rounded-circle" src="../assetsUser/img/Dophu.jpeg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;">
         <h1 style="margin-top: -50px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;">Dophu</h1>
-        <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;">03/09/22</h1>
-        <h1 style="margin-top: -28px; margin-left:150px; color: #000000; font-weight: normal; font-size: 16px;">Due: 30/09/22</h1>
+        <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;"><%=Task.postDate %> </h1>
+        <h1 style="margin-top: -28px; margin-left:150px; color: #000000; font-weight: normal; font-size: 16px;">Due: <%=Task.dueDate%> </h1>
         <a href="#"><i class="fa fa-flag-o" style="margin-left: 950px; margin-right: 5px; margin-top: -26px; float: right; color: #E0293F"></i></a>
     <div class="bbb5">
-            <p style="margin-top:-15px; margin-left: -50px;"><br>Logo Name : EAZY ADDA&nbsp;<br></p>
-            <p style="margin-top:-45px; margin-left: -50px;"><br>Logo Type: Word Mark Logo<br></p>
-            <p style="margin-top:-20px; margin-left: -50px;">You Have To Higlight E &amp; A<br></p>
-            <p style="margin-top:5px; margin-left: -50px;">Its An App Like OLX, Quikr<br></p>
-            <p style="margin-top:13px; margin-left: -50px;">Recommended Skills<br></p>
-            <p style="margin-top:-18px; margin-left: -50px;">Android Graphic Design, Logo Design, Photoshop Website Design&nbsp;<br></p>
+            <p style="margin-top:-15px; margin-left: -50px;"><br><%=Task.title %> <br></p>
+            <p style="margin-top:-45px; margin-left: -50px;"><br><%=Task.description%> <br></p>
     </div>
 </div>
+<% } %> <% } else { %>
+    <h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 18px;">You have not been accepted for a task yet.</h1>
+    
+  <% } %>
 
+<br>
+<h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 20px;">Posted Task</h1>
+
+    <% if (usertask.accepted) { %> <% for (let Task of usertask ) {%> 
     <div class="container">
     <div class="bbb2">
-        <div class="b"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 54px;height: 54px;left: 1250px;top: 13px;margin-left: 19px; margin-top: 10px;">
-            <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Sonam Wangmo</p>
-            <p style="margin-top:-15px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">09/10/22</p>
-            <p style="margin-top: -42px; margin-left: 190px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: 30/09/22</p>
+        <div class="b"><img class="rounded-circle rounded-circle" src="../img/userImg/<%=user.photo%> " style="width: 54px;height: 54px;left: 1250px;top: 13px;margin-left: 19px; margin-top: 10px;">
+            <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=user.name%> </p>
+            <p style="margin-top:-15px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=Task.postDate %> </p>
+            <p style="margin-top: -42px; margin-left: 190px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: <%=Task.dueDate%> </p>
         </div>
         <div class="bbb3">
-            <p style="margin-top: 10px; margin-left: 20px;">-Cover Letter Makeover</p>
-            <p style="margin-top: 10px; margin-left: 20px;">-Linkedln Profile Makeover</p>
-            <p style="margin-top: 10px; margin-left: 20px;">-Resume Writing</p>
-            <p style="margin-top: -23px; margin-left: 20px;"><br>Skills: Resumes, Copywriting, Content Writing, Creative Writing, Article Writing<br></p>
+            <p style="margin-top: 10px; margin-left: 20px;"><%=Task.title%> </p>
+            <p style="margin-top: 10px; margin-left: 20px;"><%=Task.description%> </p>
         </div>
         <button class="btn btn-secondary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 600px; margin-top: 10px; margin-right: 200px; float: right;">Delete</button>
         <a href="#"><button class="btn btn-primary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 910px; margin-top: -36px;">Edit</button></a>
@@ -201,9 +208,12 @@
               </div>
             
         </div>
-</div>
+        </div>
     </div>
-
+    <% } %> <% } else { %>
+        <h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 18px;">You have not accepted a freelancer yet.</h1>
+        
+      <% } %>
     <script src="../assetsUser/js/jquery.min.js"></script>
     <script src="../assetsUser/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assetsUser/js/Advanced-NavBar---Multi-dropdown.js"></script>

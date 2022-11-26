@@ -53,7 +53,14 @@ exports.updateMe = async (req, res, next) => {
       filteredBody.photo = req.files['photo'][0].filename
       filteredBody.cv = req.files['cv'][0].filename
     }
-
+    if (req.body.name == "" || req.body.email == "") {
+      return next(
+        new AppError(
+          'Enter your credentials',
+          400
+        )
+      );
+    }
     // 3) Update user document
     const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
       new: true,

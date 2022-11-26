@@ -117,8 +117,8 @@
 
     <% if (tasks.length) { %> <% for (let Task of tasks ) {%>
     <div class="container">
-        <div class="b"><a href="/profile"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 50px; height: 50px; left: 1250px; top: 13px; margin-left: 19px; margin-top: 10px;"></a>
-            <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=Task.postedBy.name%> </p>
+        <div class="b"><a href="/profile"><img class="rounded-circle rounded-circle" src="../img/userImg/<%=user.photo%>" style="width: 50px; height: 50px; left: 1250px; top: 13px; margin-left: 19px; margin-top: 10px;"></a>
+            <p style="margin-top:-50px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=user.name%></p>
             <p style="margin-top:-15px; margin-left: 90px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=moment(Task.postDate).format('Do MMMM, YYYY')%> </p>
             <p style="margin-top: -38px; margin-left: 290px; width: 142px; height: 22px; left: 205px; top: 48px; font-family: 'Inter'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due: <%=Task.dueDate%> </p>
         <br>
