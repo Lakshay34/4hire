@@ -12,6 +12,7 @@ const signToken = (id) => {
   });
 };
 
+
 const createSendToken = (user, statusCode, res) => {
   const token = signToken(user._id);
   const cookieOptions = {
@@ -51,7 +52,7 @@ exports.login = async (req, res, next) => {
     }
 
     var user = await User.findOne({ email }).select("+password");
-    console.log(user.role);
+    
 
     if (!user || !(await user.correctPassword(password, user.password))) {
       return next(new AppError("Incorrect email or password", 401));
@@ -137,6 +138,8 @@ exports.isLoggedIn = async (req, res, next) => {
 
       // THERE IS A LOGGED IN USER
       res.locals.user = currentUser;
+      
+      req.user = currentUser;
       return next();
     } catch (err) {
       return next();

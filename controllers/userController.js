@@ -1,25 +1,24 @@
 const User = require('./../models/userModel')
 const AppError = require('./../utils/appError')
+const sharp = require('sharp');
 const multer = require('multer')
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'views/img/user/');
+    cb(null, 'views/img/userImg/');
   },
   filename: (req, file, cb) => {
-
-    var obj = JSON.parse(req.cookies.token)
     const ext = file.mimetype.split('/')[1];
-    cb(null, `user-${obj['_id']}-${Date.now()}.${ext}`);
+    cb(null, `user-${req.user.id}-${Date.now()}.${ext}`);
   }
 });
 // const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image')) {
+  if (file.mimetype.startsWith('image') || file.mimetype=='application/pdf') {
     cb(null, true);
   } else {
-    cb(new AppError('Not an image! Please upload only images.', 400), false);
+    cb(new AppError('Not the corrrect format! Please upload only images or pdf.', 400), false);
   }
 };
 
@@ -28,7 +27,15 @@ const upload = multer({
   fileFilter: multerFilter
 });
 
-exports.uploadUserPhoto = upload.single('photo');
+exports.uploadUserfile = upload.fields([{name:"photo"}, {name:"cv"}]);
+
+const filterObj = (obj, ...allowedFields) => {
+  const newObj = {}
+  Object.keys(obj).forEach((el) => {
+      if (allowedFields.includes(el)) newObj[el] = obj[el]
+  })
+  return newObj
+}
 
 exports.updateMe = async (req, res, next) => {
     // 1) Create error if user POSTs password data
@@ -42,8 +49,19 @@ exports.updateMe = async (req, res, next) => {
     }
   
     // 2) Filtered out unwanted fields names that are not allowed to be updated
-    const filteredBody = filterObj(req.body, 'name', 'email', 'rating', 'report');
-  
+    const filteredBody = filterObj(req.body, 'name', 'email', 'language','skills', 'description', 'address');
+    if (req.body.photo !== 'undefined' || req.body.cv !== "undefined"){
+      filteredBody.photo = req.files['photo'][0].filename
+      filteredBody.cv = req.files['cv'][0].filename
+    }
+    if (req.body.name == "" || req.body.email == "") {
+      return next(
+        new AppError(
+          'Enter your credentials',
+          400
+        )
+      );
+    }
     // 3) Update user document
     const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
       new: true,
@@ -81,7 +99,7 @@ exports.getAllUsers = async (req, res, next) => {
 exports.createUser = async (req, res) => {
     try {
         const users = await User.create(req.body);
-        console.log(req.body.name);
+        // console.log(req.body.name);
         res.json({data: users, status: 'Success'});
 
     } catch (err) {

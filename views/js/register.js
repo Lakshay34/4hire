@@ -1,8 +1,9 @@
 import { showAlert } from './alert.js'
-// const axios = require('axios');
+// import axios from 'axios';
 
 const register = async (name, email, password, passwordConfirm, JoinDate) => {
     try {
+      // console.log(name, email, password, passwordConfirm, JoinDate)
       const res = await axios({
         method: 'POST',
         url: 'http://localhost:4001/api/v1/users/signup',
@@ -21,7 +22,7 @@ const register = async (name, email, password, passwordConfirm, JoinDate) => {
         }, 500);
       }
     } catch (err) {
-      console.log(err);
+      showAlert('error', err.response.data);
     }
   };
 

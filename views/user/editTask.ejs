@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>4Hire</title>
+    <link rel="stylesheet" href="../assetsUser/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="../assetsUser/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assetsUser/css/Advanced-NavBar---Multi-dropdown.css">
+    <link rel="stylesheet" href="../assetsUser/css/best-carousel-slide.css">
+    <link rel="stylesheet" href="../assetsUser/css/card-3-column-animation-shadows-images.css">
+    <link rel="stylesheet" href="../assetsUser/css/cards.css">
+    <link rel="stylesheet" href="../assetsUser/css/Carousel_Image_Slider-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/Carousel_Image_Slider.css">
+    <link rel="stylesheet" href="../assetsUser/css/Dark-NavBar-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/Dark-NavBar-2.css">
+    <link rel="stylesheet" href="../assetsUser/css/Dark-NavBar.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-card-image-left-dark.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-header-cover-image-button.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-navbar-inverse-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-navbar-inverse-2.css">
+    <link rel="stylesheet" href="../assetsUser/css/dh-navbar-inverse.css">
+    <link rel="stylesheet" href="../assetsUser/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../assetsUser/css/gradient-navbar-1.css">
+    <link rel="stylesheet" href="../assetsUser/css/gradient-navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assetsUser/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assetsUser/css/Logo.css">
+    <link rel="stylesheet" href="../assetsUser/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="../assetsUser/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../assetsUser/css/styles.css">
+    <style>
+        .alert {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 9999;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1.6rem 15rem;
+    -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+    }
+.alert--success {
+    background-color: #1dc8cc;
+}
+.alert--error {
+    background-color: #eb4d4b;
+}
+    </style>
+</head>
+
+<body class="text-capitalize text-left" style="color: #000000;font-family: Roboto, sans-serif;">
+    <div class="container">
+        <div class="sb">
+            <div class="sb0"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -45px; margin-top: -5px;">
+                <p style="margin-top:-50px; margin-left:40px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=task.postedBy.name%></p>
+                <div value="<%=task.id%>" id="id"></div>
+                <p style="margin-top: 30px; margin-left: -40px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Title</p>
+                <form>
+                    <div class="field"><textarea class="form-control" name="float-textarea" style="border: 0; border-bottom: 1px solid #E0E0E0; border-radius: 10px; background: rgba(255, 255, 255, 0.5); border: 1px solid rgba(0, 0, 0, 0.5); margin-left: -40px; margin-top: -10px; height: 50px;"
+                            placeholder="<%=task.title%>" id="title" ></textarea></div>
+                </form>
+                <p style="margin-top: 30px; margin-left: -40px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Due Date</p>
+                <form>
+                    <form>
+                        <div class="field"><input id="dueDate" placeholder="<%=task.dueDate%>" class="form-control" type="date" style="border: 0; border-bottom: 1px solid #E0E0E0; border-radius: 10px; background: rgba(255, 255, 255, 0.5); border: 1px solid rgba(0, 0, 0, 0.5); margin-left: -40px; margin-top: -10px; height: 50px;"/></div>
+                    </form>
+                </form>
+                <p style="margin-top: 30px; margin-left: -40px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Add Description</p>
+                <form>
+                    <div class="field"><textarea class="form-control" name="float-textarea" style="border: 0; border-bottom: 1px solid #E0E0E0; border-radius: 10px; background: rgba(255, 255, 255, 0.5); border: 1px solid rgba(0, 0, 0, 0.5); margin-left: -40px; margin-top: -10px; height: 150px;"
+                            placeholder="<%=task.description%>" id="description"></textarea></div>
+                </form>
+            </div>
+           
+            <a href="/task"><button class="btn btn-secondary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 450px; margin-top: 20px; margin-right: 210px; float: right;">Cancel</button></a>
+            <button class="btn btn-primary" type="button" id="addTask" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 900px; margin-top: -37px; margin-right: 40px;">Update</button>
+            </div>
+    </div>
+    <script src="../assetsUser/js/jquery.min.js"></script>
+    <script src="../assetsUser/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assetsUser/js/Advanced-NavBar---Multi-dropdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
+    <script type="module" src="../js/userEditTask.js"></script>
+</body>
+
+</html>
