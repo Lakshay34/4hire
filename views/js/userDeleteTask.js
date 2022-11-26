@@ -3,12 +3,12 @@ import { showAlert } from "./alert.js";
 
 const deleteTask = async (id) => {
   try {
-    console.log(id)
+    // console.log(id)
     const res = await axios({
       method: "DELETE",
       url: `http://localhost:4001/api/v1/tasks/${id}`,
     });
-    console.log(res);
+    // console.log(res);
     if (res.data.status === "Success") {
       showAlert("success", "Task Deleted successfully!");
       window.setTimeout(() => {

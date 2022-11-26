@@ -16,7 +16,7 @@ const showAlert = (type, msg) => {
 
 const addTask = async (title, dueDate, description) => {
   try {
-    console.log(title, dueDate, description)
+    // console.log(title, dueDate, description)
     const res = await axios({
       method: "PATCH",
       url: `http://localhost:4001/api/v1/tasks/updateTask`,
@@ -26,7 +26,7 @@ const addTask = async (title, dueDate, description) => {
         description
       }
     });
-    console.log(res)
+    // console.log(res)
     if (res.data.status === "success") {
       showAlert("success", "Task Added successfully!");
       window.setTimeout(() => {

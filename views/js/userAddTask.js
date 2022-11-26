@@ -16,7 +16,7 @@ const showAlert = (type, msg) => {
 
 const addTask = async (title, dueDate, description, postDate, id) => {
   try {
-    console.log(title, dueDate, description, postDate, id, name)
+    // console.log(title, dueDate, description, postDate, id, name)
     const res = await axios({
       method: "POST",
       url: `http://localhost:4001/api/v1/tasks/`,
@@ -28,7 +28,7 @@ const addTask = async (title, dueDate, description, postDate, id) => {
         postedBy: id,
       }
     });
-    console.log(res)
+    // console.log(res)
     if (res.data.status === "Success") {
       showAlert("success", "Task Added successfully!");
       window.setTimeout(() => {

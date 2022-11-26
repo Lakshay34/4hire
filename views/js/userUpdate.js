@@ -3,9 +3,9 @@ import { showAlert } from "./alert.js";
 export const updateSettings = async (form, passwordCurrent, password, passwordConfirm) => {
   try {
     
-      for (const value of form.values()) {
-        console.log(value);
-      }
+      // for (const value of form.values()) {
+      //   console.log(value);
+      // }
   
     const res = await axios.all([
       axios({
@@ -31,8 +31,9 @@ export const updateSettings = async (form, passwordCurrent, password, passwordCo
       }, 1000);
     }
   } catch (err) {
-    showAlert('error', err.response.data)
     console.log(err);
+    showAlert('error', err.response.data)
+    
   }
 };
 

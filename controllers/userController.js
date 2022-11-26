@@ -1,5 +1,6 @@
 const User = require('./../models/userModel')
 const AppError = require('./../utils/appError')
+const sharp = require('sharp');
 const multer = require('multer')
 
 const multerStorage = multer.diskStorage({
@@ -98,7 +99,7 @@ exports.getAllUsers = async (req, res, next) => {
 exports.createUser = async (req, res) => {
     try {
         const users = await User.create(req.body);
-        console.log(req.body.name);
+        // console.log(req.body.name);
         res.json({data: users, status: 'Success'});
 
     } catch (err) {

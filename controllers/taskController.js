@@ -60,7 +60,7 @@ exports.getAllTask = async (req, res, next) => {
 exports.createTask = async (req, res) => {
     try {
         const tasks = await Task.create(req.body);
-        console.log(req.body.name);
+        // console.log(req.body.name);
         res.json({data: tasks, status: 'Success'});
 
     } catch (err) {

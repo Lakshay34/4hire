@@ -37,7 +37,7 @@ exports.getHome = catchAsync(async(req, res) => {
       }
     }
   ]);
-  console.log(tasks)
+  // console.log(tasks)
   res.render("user/userHomepage", {
     user: req.user,
      tasks: tasks.reverse()

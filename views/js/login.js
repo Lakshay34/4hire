@@ -3,7 +3,7 @@ import { showAlert } from "./alert.js";
 
 const login = async (email, password, role) => {
   try {
-    console.log(email, password, role);
+    // console.log(email, password, role);
     const res = await axios({
       method: "POST",
       url: "http://localhost:4001/api/v1/users/login",
@@ -58,7 +58,7 @@ if (loginForm)
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    console.log(email, password);
+    // console.log(email, password);
     login(email, password, "user");
   });
 
@@ -67,6 +67,6 @@ if (adminlogin)
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    console.log(email, password, "admin");
+    // console.log(email, password, "admin");
     login(email, password, "admin");
   });
