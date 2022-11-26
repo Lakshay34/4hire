@@ -37,7 +37,7 @@ const forgotPassword = async (email) => {
 };
 
 
-const resetPassword = async (password, passwordConfirm, resettoken) => {
+const resetPassword = async (password, passwordConfirm) => {
   try {
     const res = await axios({
     method: 'PATCH',
@@ -73,6 +73,6 @@ if (resetpass)
     e.preventDefault();
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('passwordConfirm').value;
-    resetPassword(password, passwordConfirm, resettoken);
+    resetPassword(password, passwordConfirm);
   })
 
