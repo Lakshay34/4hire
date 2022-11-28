@@ -3,9 +3,9 @@ import { showAlert } from "./alert.js";
 export const updateSettings = async (form, passwordCurrent, password, passwordConfirm) => {
   try {
     
-      // for (const value of form.values()) {
-      //   console.log(value);
-      // }
+      for (const value of form.values()) {
+        console.log(value);
+      }
   
     const res = await axios.all([
       axios({
@@ -26,11 +26,6 @@ export const updateSettings = async (form, passwordCurrent, password, passwordCo
 
     if (res[0].data.status === "success" && res[1].data.status === "success") {
       showAlert("success", "Data updated successfully!");
-      window.setTimeout(() => {
-        location.assign('/profile');
-      }, 1000);
-    } else if (res[0].data.status === "success") {
-      showAlert("success", "Info and files updated successfully!");
       window.setTimeout(() => {
         location.assign('/profile');
       }, 1000);

@@ -7,6 +7,7 @@ const router = express.Router()
 router.patch('/updateTask', authController.isLoggedIn, taskController.updateUserTask);
 router.delete('/deleteTask', authController.isLoggedIn, taskController.deleteUserTask);
 router.patch('/applyforTask', authController.isLoggedIn, taskController.applyforTask);
+router.patch('/acceptUser', authController.isLoggedIn, taskController.acceptUser);
 
 // router.use(authController.restrictTo('admin'));
 router

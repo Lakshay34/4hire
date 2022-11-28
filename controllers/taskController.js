@@ -11,6 +11,16 @@ exports.applyforTask = async (req, res, next) => {
     }
 }
 
+exports.acceptUser = async (req, res, next) => {
+    try {
+        const task = await Task.updateOne({id:req.body.id}, {accepted : req.body.user});
+        res.json({data: task, status: 'Success'});
+
+    } catch (err) {
+        res.status(500).json({error: err.message});
+    }
+}
+
 const filterObj = (obj, ...allowedFields) => {
     const newObj = {}
     Object.keys(obj).forEach((el) => {

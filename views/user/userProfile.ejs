@@ -128,16 +128,16 @@
         <div class="row">
             <div class="col-md-6" style="border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px;">
                 <h1 style="font-size: 18px;font-family: Roboto, sans-serif;font-weight: bold;margin-top: 16px;margin-left: 40px; padding-top: 25px">Languages</h1>
-                <% for (let lan of user.language ) {%>
+                <% if (user.language.length ) for (let lan of user.language ) {%>
                 <h1 style="font-size: 16px;font-family: Roboto, sans-serif;margin-top: 20px;margin-left: 40px;"><%=lan%> </h1>
                 <% } %> 
                 <hr style="margin-top:30px">
                 <h1 style="font-size: 18px;font-family: Roboto, sans-serif;font-weight: bold;margin-left: 40px;margin-top: 28px;">Skills</h1>
-                <% for (let skill of user.skills ) {%>
+                <% if (user.skills.length) for (let skill of user.skills ) {%>
                 <button class="btn" type="button" style="  background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px; margin-left: 40px; margin-top: 30px; font-family: Roboto, sans-serif;"><%=skill%></button>
                 <% } %> 
                 <hr style="margin-top: 30px;">
-                <h1 style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: bold;margin-top: 20px;margin-left: 40px;">My CV: <% if (user.cv !== 'default.pdf') { %>  <a href="../img/userImg/<%=user.cv%> " style="color:light blue;" target="_blank">MyCV.pdf</a> <% }  else { %> No CV <% } %>  </h1>
+                <h1 style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: bold;margin-top: 20px;margin-left: 40px;">My CV: <% if (user.cv !== 'default.pdf') { %>  <a href="../img/userImg/<%=user.cv%> " style="color:light blue;" target="_blank">MyCV.pdf</a> <% }  else { %> No CV <% } %></h1>
             </div>
     <!--         <hr style="border: none; margin-left:-2px; border-left: 1px solid; height: 70vh; width: 1px; ">  -->
             <div class="col-md-6" style="border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px;">
@@ -152,19 +152,19 @@
 
 <h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 20px;">You have been Accepted for Task</h1>
 
-<% if (acceptedtask.length) { %> <% for (let Task of acceptedtask ) {%> 
+<% if (acceptedtask.length) { %> <% for (let Task of acceptedtask ) { if ( Task.accepted == user.id ){ %> 
 <div class="bbb1">
-    <img class="rounded-circle rounded-circle" src="../assetsUser/img/Dophu.jpeg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;">
-        <h1 style="margin-top: -50px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;">Dophu</h1>
-        <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;"><%=Task.postDate %> </h1>
-        <h1 style="margin-top: -28px; margin-left:150px; color: #000000; font-weight: normal; font-size: 16px;">Due: <%=Task.dueDate%> </h1>
+    <img class="rounded-circle rounded-circle" src="../img/userImg/<%=Task.result[0].photo%>" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;">
+        <h1 style="margin-top: -50px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;"><%=Task.result[0].name%></h1>
+        <h1 style="margin-top: 10px; margin-left:45px; color: #000000; font-weight: bold; font-size: 16px;"><%=moment(Task.postDate).format('Do MMMM, YYYY')%></h1>
+        <h1 style="margin-top: -28px; margin-left:350px; color: #000000; font-weight: normal; font-size: 16px;">Due: <%=Task.dueDate%> </h1>
         <a href="#"><i class="fa fa-flag-o" style="margin-left: 950px; margin-right: 5px; margin-top: -26px; float: right; color: #E0293F"></i></a>
     <div class="bbb5">
             <p style="margin-top:-15px; margin-left: -50px;"><br><%=Task.title %> <br></p>
             <p style="margin-top:-45px; margin-left: -50px;"><br><%=Task.description%> <br></p>
     </div>
 </div>
-<% } %> <% } else { %>
+<% }}%> <% } else { %>
     <h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 18px;">If you have been accepted for a task, it will be shown here.</h1>
     
   <% } %>
