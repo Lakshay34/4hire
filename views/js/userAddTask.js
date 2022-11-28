@@ -14,18 +14,18 @@ const showAlert = (type, msg) => {
     window.setTimeout(hideAlert, 5000);
 };
 
-const addTask = async (title, dueDate, description, postDate, id) => {
+const addTask = async (title, dueDate, description, postDate, postedBy) => {
   try {
     // console.log(title, dueDate, description, postDate, id, name)
     const res = await axios({
       method: "POST",
       url: `http://localhost:4001/api/v1/tasks/`,
       data: {
-        title:title, 
-        dueDate:dueDate, 
-        description:description, 
-        postDate:postDate, 
-        postedBy: id,
+        title,
+        dueDate,
+        description,
+        postDate,
+        postedBy,
       }
     });
     // console.log(res)
@@ -49,8 +49,8 @@ if (addtask) {
     var title = document.getElementById("title").value;
     var dueDate = document.getElementById("dueDate").value;
     var description = document.getElementById("description").value;
-    var id = document.getElementById('id').getAttribute("value");
+    var postedBy = document.getElementById('id').getAttribute("value");
     var postDate = new Date()
-    addTask(title, dueDate, description, postDate, id);
+    addTask(title, dueDate, description, postDate, postedBy);
   });
 }

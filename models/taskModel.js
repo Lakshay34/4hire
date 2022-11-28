@@ -26,10 +26,9 @@ const taskSchema = new mongoose.Schema({
   },
 
   applied: [{
-    id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"
-  }}],
+  }],
 
   postedBy: {
       type: mongoose.Schema.Types.ObjectId,

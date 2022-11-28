@@ -137,12 +137,12 @@
                 <button class="btn" type="button" style="  background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px; margin-left: 40px; margin-top: 30px; font-family: Roboto, sans-serif;"><%=skill%></button>
                 <% } %> 
                 <hr style="margin-top: 30px;">
-                <h1 style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: bold;margin-top: 20px;margin-left: 40px;">My CV: <a href="../img/userImg/<%user.cv%> " style="color:light blue;" target="_blank">MyCV.pdf</a></h1>
+                <h1 style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: bold;margin-top: 20px;margin-left: 40px;">My CV: <% if (user.cv !== 'default.pdf') { %>  <a href="../img/userImg/<%=user.cv%> " style="color:light blue;" target="_blank">MyCV.pdf</a> <% }  else { %> No CV <% } %>  </h1>
             </div>
     <!--         <hr style="border: none; margin-left:-2px; border-left: 1px solid; height: 70vh; width: 1px; ">  -->
             <div class="col-md-6" style="border: 1px solid rgba(0, 0, 0, 0.59); border-radius: 10px;">
                 <h1 style="font-size: 18px;font-family: Roboto, sans-serif;font-weight: bold;margin-top: 16px;margin-left: 40px; padding-top: 25px">Description</h1>
-                <p style="margin-top: 10px;margin-left: 40px;"><%=user.description %> </p>
+                <p style="margin-top: 10px;margin-left: 40px;"><%=user.description%> </p>
             </div>
         </div>
     </div>
@@ -165,12 +165,12 @@
     </div>
 </div>
 <% } %> <% } else { %>
-    <h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 18px;">You have not been accepted for a task yet.</h1>
+    <h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 18px;">If you have been accepted for a task, it will be shown here.</h1>
     
   <% } %>
 
 <br>
-<h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 20px;">Posted Task</h1>
+<h1 style="margin-top: 30px; margin-left:35px; color: #000000; font-weight: bold; font-size: 20px;">Tasks you have posted</h1>
 
     <% if (usertask.accepted) { %> <% for (let Task of usertask ) {%> 
     <div class="container">

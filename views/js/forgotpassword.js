@@ -32,7 +32,7 @@ const forgotPassword = async (email) => {
     </div>`
   }
   } catch (err) {   
-    showAlert('error', err)
+    showAlert('error', "There is No user with this email address")
   }
 };
 
@@ -55,6 +55,7 @@ const resetPassword = async (password, passwordConfirm) => {
   }
   } catch (err) {   
     console.log(err);
+    showAlert('error', "Error")
   }
 };
 

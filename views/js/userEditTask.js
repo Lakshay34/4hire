@@ -28,7 +28,7 @@ const addTask = async (title, dueDate, description) => {
     });
     // console.log(res)
     if (res.data.status === "success") {
-      showAlert("success", "Task Added successfully!");
+      showAlert("success", "Task posted successfully!");
       window.setTimeout(() => {
         location.assign('/task');
       }, 1000);

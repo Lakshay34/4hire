@@ -22,7 +22,7 @@ const register = async (name, email, password, passwordConfirm, JoinDate) => {
         }, 500);
       }
     } catch (err) {
-      showAlert('error', err.response.data);
+      showAlert('error', "Error! Password does not match!");
     }
   };
 

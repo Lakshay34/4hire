@@ -67,7 +67,8 @@ exports.getAddTask = catchAsync(async(req, res) => {
 exports.getEditTask = catchAsync(async(req, res) => {
   const task = await Task.findById(req.query.id)
   res.render("user/editTask", {
-    task
+    task,
+    user: req.user
   });
 });
 
@@ -101,7 +102,16 @@ exports.getAdminProfile = (req, res) => {
 };
 
 exports.getAdminTask = catchAsync(async (req, res, next) => {
-  const tasks = await Task.find();
+  const tasks = await Task.aggregate([
+    {
+      '$lookup': {
+        'from': 'users', 
+        'localField': 'postedBy', 
+        'foreignField': '_id', 
+        'as': 'result'
+      }
+    }
+  ]);
   res.status(200).render("admin/adminTasks", {
     tasks,
   });

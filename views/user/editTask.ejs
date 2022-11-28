@@ -63,8 +63,8 @@
 <body class="text-capitalize text-left" style="color: #000000;font-family: Roboto, sans-serif;">
     <div class="container">
         <div class="sb">
-            <div class="sb0"><img class="rounded-circle rounded-circle" src="../assetsUser/img/sonam.jpg" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -45px; margin-top: -5px;">
-                <p style="margin-top:-50px; margin-left:40px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=task.postedBy.name%></p>
+            <div class="sb0"><img class="rounded-circle rounded-circle" src="../img/userImg/<%=user.photo%> " style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -45px; margin-top: -5px;">
+                <p style="margin-top:-50px; margin-left:40px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;"><%=user.name%></p>
                 <div value="<%=task.id%>" id="id"></div>
                 <p style="margin-top: 30px; margin-left: -40px; width: 142px; height: 22px; left: 205px; top: 48px;  font-family: 'Inter'; font-style: normal; font-weight: 600; font-size: 16px; line-height: 22px; /* identical to box height */   color: #000000;">Title</p>
                 <form>
@@ -91,7 +91,7 @@
     <script src="../assetsUser/js/jquery.min.js"></script>
     <script src="../assetsUser/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assetsUser/js/Advanced-NavBar---Multi-dropdown.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
     <script type="module" src="../js/userEditTask.js"></script>
 </body>
 

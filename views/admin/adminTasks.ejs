@@ -163,7 +163,7 @@
           <img
             onclick="myFunction()"
             class="u-image u-image-circle u-image-2"
-            src="../assetsAdmin/images/sonam.jpg"
+            src="../img/userImg/admin.png"
             alt=""
             data-image-height="800"
             data-image-width="1200"
@@ -188,7 +188,7 @@
           <div class="u-container-layout u-container-layout-1">
             <img
               class="u-image u-image-circle u-image-1"
-              src="../assetsAdmin/images/sonam.jpg"
+              src="../img/userImg/<%=Task.result[0].photo%> " 
               alt=""
               data-image-width="1200"
               data-image-height="800"
@@ -196,7 +196,7 @@
             <h5
               class="u-custom-font u-font-open-sans u-text u-text-default u-text-2"
             >
-              <span style="font-weight: 700"><%=Task.postedBy.name%> </span>
+              <span style="font-weight: 700"><%=Task.result[0].name%> </span>
             </h5>
             <% if ( Task.report == true ) { %>
             <h5 class="u-text u-text-default u-text-palette-2-base u-text-3">
@@ -208,9 +208,9 @@
             <h5
               class="u-custom-font u-font-open-sans u-text u-text-default u-text-4"
             >
-              <%=Task.postDate%>
+            <%=moment(Task.postDate).format('DD MMMM, YYYY')%>
             </h5>
-            <h5 class="u-text u-text-5"><%=Task.title %></h5>
+            <h5 class="u-text u-text-5"><%=Task.title%></h5>
             <br />
             <p><%=Task.description%></p>
             <a

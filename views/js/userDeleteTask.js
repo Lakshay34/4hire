@@ -17,7 +17,7 @@ const deleteTask = async (id) => {
     }
   } catch (err) {
     console.log(err);
-    showAlert("error", "Could not delete Task");
+    showAlert("error", "Could not delete Task, Try again later");
   }
 };
 

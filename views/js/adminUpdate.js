@@ -29,14 +29,14 @@ export const updateSettings = async (
       }),
     ]);
 
-    if (res[0].data.status === "success" && res[1].data.status === "success") {
+    if (res[0].data.status === "success" || res[1].data.status === "success") {
       showAlert("success", "Data updated successfully!");
       window.setTimeout(() => {
         location.reload(true);
       }, 1000);
     }
   } catch (err) {
-    // showAlert('error', err.response.data)
+    showAlert('error', err.response.data)
     console.log(err);
   }
 };

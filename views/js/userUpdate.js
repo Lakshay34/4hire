@@ -29,6 +29,16 @@ export const updateSettings = async (form, passwordCurrent, password, passwordCo
       window.setTimeout(() => {
         location.assign('/profile');
       }, 1000);
+    } else if (res[0].data.status === "success") {
+      showAlert("success", "Info and files updated successfully!");
+      window.setTimeout(() => {
+        location.assign('/profile');
+      }, 1000);
+    } else if (res[1].data.status === "success") {
+      showAlert("success", "New Password updated successfully!");
+      window.setTimeout(() => {
+        location.assign('/profile');
+      }, 1000);
     }
   } catch (err) {
     console.log(err);
