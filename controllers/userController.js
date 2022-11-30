@@ -1,4 +1,5 @@
 const User = require('./../models/userModel')
+const Task = require('./../models/taskModel')
 const AppError = require('./../utils/appError')
 const sharp = require('sharp');
 const multer = require('multer')
@@ -78,7 +79,6 @@ exports.updateMe = async (req, res, next) => {
   
   exports.deleteMe = async (req, res, next) => {
     await User.findByIdAndUpdate(req.user.id, { active: false });
-  
     res.status(204).json({
       status: 'success',
       data: null
@@ -119,7 +119,7 @@ exports.getUser = async (req, res) => {
 
 exports.updateUser = async (req, res) => {
     try {
-        const users = await User.findByIdAndUpdate(req.params.id);
+        const users = await User.findByIdAndUpdate(req.params.id, req.body);
         res.json({data: users, status: 'Success'});
 
     } catch (err) {

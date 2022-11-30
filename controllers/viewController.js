@@ -106,7 +106,7 @@ exports.getprofile = catchAsync(async(req, res) => {
       }
     }
   ]);
-  console.log(acceptedtask)
+  // console.log(acceptedtask)
   res.render("user/userProfile", {
     user: req.user,
     usertask,
@@ -154,6 +154,6 @@ exports.getAdminTask = catchAsync(async (req, res, next) => {
 exports.getAdminUser = catchAsync(async (req, res, next) => {
   const users = await User.find({ role: "user" });
   res.status(200).render("admin/adminUsers", {
-    users,
+    users : users.reverse(),
   });
 });

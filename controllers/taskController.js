@@ -4,6 +4,7 @@ const AppError = require('./../utils/appError')
 exports.applyforTask = async (req, res, next) => {
     try {
         const task = await Task.updateOne({id:req.body.id}, {$addToSet:{applied : req.body.user}});
+        console.log(req.body.id)
         res.json({data: task, status: 'Success'});
 
     } catch (err) {
@@ -33,7 +34,7 @@ exports.updateUserTask = async (req, res, next) => {
      
     // 2) Filtered out unwanted fields names that are not allowed to be updated
     const filteredBody = filterObj(req.body, 'title', 'description', 'dueDate');
-  
+    console.log(req)
     // 3) Update user document
     const updatedTask = await Task.findByIdAndUpdate(req.params.id, filteredBody, {
       new: true,
@@ -91,7 +92,7 @@ exports.getTask = async (req, res) => {
 
 exports.updateTask = async (req, res) => {
     try {
-        const tasks = await Task.findByIdAndUpdate(req.params.id);
+        const tasks = await Task.findByIdAndUpdate(req.params.id, req.body);
         res.json({data: tasks, status: 'Success'});
 
     } catch (err) {

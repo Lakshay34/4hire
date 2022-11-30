@@ -131,7 +131,7 @@
     </div>
     <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2<%=Task.id%>" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 600px; margin-top: 10px; margin-right: 200px; float: right;" >Delete</button>
   
-    <a href="/edittask?id=<%=Task._id%> "><button class="btn btn-primary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 910px; margin-top: -36px;">Edit</button></a>
+    <a href="/edittask?id=<%=Task._id%>"><button class="btn btn-primary" type="button" style="width: 150px; height: 36px; left: 715px; top: 572px;  background: #B9B7B7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; margin-left: 910px; margin-top: -36px;">Edit</button></a>
       
     <% if (Task.applieduser.length) {  %> 
     <div class="b2">
@@ -148,7 +148,7 @@
             <p style="margin-left: -10px; margin-top: 10px;" ><%=apple.name%></p>
         </div>
         <div class="col-lg-2 col-md-2 small2">
-            <i class="fa fa-star" style="margin-left: -10px; margin-top: 10px; color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star" style="color: #F9BC67;"></i><i class="fa fa-star fa-star" style="color: #D9D9D9"></i><i class="fa fa-star fa-star" style="color: #D9D9D9"></i>
+            
         </div>
         <div class="col-lg-2 col-md-2 small3">
             <p class="contact" style="margin-left: -10px; margin-top: 10px;" >Contact: <%=apple.email%> </p>

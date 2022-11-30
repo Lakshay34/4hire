@@ -114,8 +114,8 @@
     <div class="container">
         <div class="box" style="margin-right: 18px;">
             <a href="/profile"><img class="rounded-circle rounded-circle" src="../img/userImg/<%=user.photo%>" style="width: 50px;height: 50px;left: 1250px;top: 13px;margin-left: -52px;"></a>
-            <div class="box1"><a href="/addtask" style="color: black; margin-top: 10px; margin-bottom: -29px; margin-left: 20px; position: absolute;">Post task</a></div>
-        </div>
+            <a href="/addtask"><div class="box1"><p style="color: black; margin-top: 10px; margin-bottom: -29px; margin-left: 20px; position: absolute;">Post task</p></div></a>
+          </div>
 
         <% if (tasks.length) { %> <% for (let Task of tasks ) {%>
         <form>
@@ -128,9 +128,9 @@
 
                 <!-- Button trigger modal -->
                  <!-- Modal -->
-                <div class="modal fade" id="exampleModal<%=Task.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal<%=Task._id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                <div class="modal-content" value="<%=Task.id%>">
+                <div class="modal-content" value="<%=Task._id%>">
                 <div class="modal-header">
                 <h6 class="modal-title" id="exampleModalLabel">Do you want to report this task?</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -153,13 +153,13 @@
                     <p style="margin-top:-15px; margin-left: 20px;"><%=Task.description%></p>
                     <br>
                 </div>
-                <button class="button" style="margin-left: -600px; margin-right: 20px; margin-top: 50px; width: 150px; height: 42px; left: 967px; top: 416px; background: #67A4F9; border-radius: 10px; border-color:#ffffff; float: right; color:#ffffff;" data-toggle="modal" data-target="#exampleModal1<%=Task.id%>" type="button">Apply</button>
+                <button class="button" style="margin-left: -600px; margin-right: 20px; margin-top: 50px; width: 150px; height: 42px; left: 967px; top: 416px; background: #67A4F9; border-radius: 10px; border-color:#ffffff; float: right; color:#ffffff;" data-toggle="modal" data-target="#exampleModal1<%=Task._id%>" type="button">Apply</button>
 
                 <!-- Button trigger modal -->
 
-                <div class="modal fade" id="exampleModal1<%=Task.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal1<%=Task._id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                <div class="modal-content" value="<%=Task.id%>">
+                <div class="modal-content" id="ID" value="<%=Task._id%>">
                 <div class="modal-header" id="user" value="<%=user.id%>">
                 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

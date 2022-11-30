@@ -2,7 +2,7 @@ import { showAlert } from "./alert.js";
 
 const apply = async (id, user) => {
     try {
-        
+      console.log(id)
       const res = await axios({
         method: "PATCH",
         url: "http://127.0.0.1:4001/api/v1/tasks/applyforTask",
@@ -26,7 +26,7 @@ const apply = async (id, user) => {
 
 const applyfortask = document.getElementById("apply");
 
-var modal = document.querySelector(".modal-content");
+var modal = document.getElementById("ID");
 var modal2 = document.getElementById("user");
 
 if (applyfortask) {
