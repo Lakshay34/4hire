@@ -5,7 +5,7 @@ const deleteTask = async (id) => {
   try {
     const res = await axios({
       method: "DELETE",
-      url: `http://localhost:4001/api/v1/tasks/${id}`,
+      url: `/api/v1/tasks/${id}`,
     });
     // console.log(res);
     if (res.data.status === "Success") {
@@ -15,7 +15,7 @@ const deleteTask = async (id) => {
       }, 1000);
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     showAlert("error", "Could not delete Task");
   }
 };
@@ -25,7 +25,7 @@ const deleteUser = async (id) => {
     // console.log(id);
     const res = await axios({
       method: "DELETE",
-      url: `http://localhost:4001/api/v1/users/${id}`,
+      url: `/api/v1/users/${id}`,
     });
     if ((res.data.status = "success")) {
       showAlert("success", "User Deleted successfully!");
@@ -34,7 +34,7 @@ const deleteUser = async (id) => {
       }, 1000);
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     showAlert("error", "Could not delete User");
   }
 };

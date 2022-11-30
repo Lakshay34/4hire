@@ -19,7 +19,7 @@ const addTask = async (title, dueDate, description, postDate, postedBy) => {
     // console.log(title, dueDate, description, postDate, id, name)
     const res = await axios({
       method: "POST",
-      url: `http://localhost:4001/api/v1/tasks/`,
+      url: `/api/v1/tasks/`,
       data: {
         title,
         dueDate,
@@ -36,7 +36,7 @@ const addTask = async (title, dueDate, description, postDate, postedBy) => {
       }, 1000);
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     showAlert("error", "Could not Post Task");
   }
 };

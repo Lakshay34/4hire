@@ -8,11 +8,11 @@ export const updateSettings = async (
   passwordConfirm
 ) => {
   try {
-    console.log(name, email, passwordCurrent, password, passwordConfirm);
+    // console.log(name, email, passwordCurrent, password, passwordConfirm);
     const res = await axios.all([
       axios({
         method: "PATCH",
-        url: "http://localhost:4001/api/v1/users/updateDetails",
+        url: "/api/v1/users/updateDetails",
         data: {
           name,
           email,
@@ -20,7 +20,7 @@ export const updateSettings = async (
       }),
       axios({
         method: "PATCH",
-        url: "http://localhost:4001/api/v1/users/updatePassword",
+        url: "/api/v1/users/updatePassword",
         data: {
           passwordCurrent,
           password,
@@ -37,7 +37,7 @@ export const updateSettings = async (
     }
   } catch (err) {
     showAlert('error', err.response.data)
-    console.log(err);
+    // console.log(err);
   }
 };
 

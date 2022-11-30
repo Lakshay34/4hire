@@ -5,7 +5,7 @@ const forgotPassword = async (email) => {
   try {
     const res = await axios({
     method: 'POST',
-    url: 'http://localhost:4001/api/v1/users/forgotPassword',
+    url: '/api/v1/users/forgotPassword',
     data: {
       email
     },
@@ -41,7 +41,7 @@ const resetPassword = async (password, passwordConfirm) => {
   try {
     const res = await axios({
     method: 'PATCH',
-    url: `http://localhost:4001/api/v1/users/resetPassword/${resettoken}`,
+    url: `/api/v1/users/resetPassword/${resettoken}`,
     data: {
       password,
       passwordConfirm
@@ -54,7 +54,7 @@ const resetPassword = async (password, passwordConfirm) => {
         <script src="assets/js/jquery.min.js"></script>`
   }
   } catch (err) {   
-    console.log(err);
+    // console.log(err);
     showAlert('error', "Error")
   }
 };

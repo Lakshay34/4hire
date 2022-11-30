@@ -2,10 +2,10 @@ import { showAlert } from "./alert.js";
 
 const apply = async (id, user) => {
     try {
-      console.log(id)
+      // console.log(id)
       const res = await axios({
         method: "PATCH",
-        url: "http://127.0.0.1:4001/api/v1/tasks/applyforTask",
+        url: "/api/v1/tasks/applyforTask",
         data: {
             id,
             user

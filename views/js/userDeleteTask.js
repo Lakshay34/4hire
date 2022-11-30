@@ -6,7 +6,7 @@ const deleteTask = async (id) => {
     // console.log(id)
     const res = await axios({
       method: "DELETE",
-      url: `http://localhost:4001/api/v1/tasks/${id}`,
+      url: `/api/v1/tasks/${id}`,
     });
     // console.log(res);
     if (res.data.status === "Success") {
@@ -16,7 +16,7 @@ const deleteTask = async (id) => {
       }, 1000);
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     showAlert("error", "Could not delete Task, Try again later");
   }
 };

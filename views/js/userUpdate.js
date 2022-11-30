@@ -3,19 +3,19 @@ import { showAlert } from "./alert.js";
 export const updateSettings = async (form, passwordCurrent, password, passwordConfirm) => {
   try {
     
-      for (const value of form.values()) {
-        console.log(value);
-      }
+      // for (const value of form.values()) {
+      //   console.log(value);
+      // }
   
     const res = await axios.all([
       axios({
         method: "PATCH",
-        url: "http://localhost:4001/api/v1/users/updateDetails",
+        url: "/api/v1/users/updateDetails",
         data: form
       }),
       axios({
         method: "PATCH",
-        url: "http://localhost:4001/api/v1/users/updatePassword",
+        url: "/api/v1/users/updatePassword",
         data: {
           passwordCurrent, 
           password, 
@@ -36,7 +36,7 @@ export const updateSettings = async (form, passwordCurrent, password, passwordCo
       }, 1000);
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     showAlert('error', err.response.data)
     
   }

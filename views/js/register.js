@@ -6,7 +6,7 @@ const register = async (name, email, password, passwordConfirm, JoinDate) => {
       // console.log(name, email, password, passwordConfirm, JoinDate)
       const res = await axios({
         method: 'POST',
-        url: 'http://localhost:4001/api/v1/users/signup',
+        url: '/api/v1/users/signup',
         data: {
           name,
           email,

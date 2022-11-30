@@ -6,7 +6,7 @@ const login = async (email, password, role) => {
     // console.log(email, password, role);
     const res = await axios({
       method: "POST",
-      url: "http://localhost:4001/api/v1/users/login",
+      url: "/api/v1/users/login",
       data: {
         email,
         password,
@@ -24,7 +24,7 @@ const login = async (email, password, role) => {
       }, 500);
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     showAlert("error", "Incorrect Email or Password");
   }
 };
@@ -33,7 +33,7 @@ const logout = async () => {
   try {
     const res = await axios({
       method: "GET",
-      url: "http://127.0.0.1:4001/api/v1/users/logout",
+      url: "/api/v1/users/logout",
     });
     
     if ((res.data.status = "success")) {
@@ -42,7 +42,7 @@ const logout = async () => {
       });
     }
   } catch (err) {
-    console.log(err.response);
+    // console.log(err.response);
     showAlert("error", "Error logging out! Try again.");
   }
 };
